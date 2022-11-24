@@ -17,12 +17,18 @@
 #define SWT2 PORTBbits.RB1
 #define SWT3 PORTBbits.RB2
 
+#define BUZZ PORTCbits.RC7
+
+
+#define IDLE 0
+#define WAIT 1
+#define CURRENT IDLE
+
 // Override putch function to redirect printf from stdio to lcd
 void putch(char data)
 {
-  escreve_lcd(data);   
+    escreve_lcd(data);   
 }
-
 
 void configurePins()
 {
@@ -45,6 +51,8 @@ void configurePins()
     TRISDbits.RD5 = 0; /* Make RD5 pin as an output pin */
     TRISDbits.RD6 = 0; /* Make RD6 pin as an output pin */
     TRISDbits.RD7 = 0; /* Make RD7 pin as an output pin */
+
+    TRISCbits.RC7 = 0; /* Make RC7 pin as an output pin */
 }
 
 void configureIRQ()
@@ -87,9 +95,9 @@ void main(void)
 {
     setup();
     printf("Hello, World!");
+
     while (1)
-    {
-    }
+    {}
 }
 
 void __interrupt(high_priority) isr(void)
@@ -106,4 +114,13 @@ void __interrupt(high_priority) isr(void)
     INTCONbits.INT0IF = 0;
     INTCON3bits.INT1IF = 0;
     INTCON3bits.INT2IF = 0;
+}
+
+void state(){
+    switch(CURRENT){
+        case IDLE:
+            break;
+        case WAIT:
+            break;
+    }
 }

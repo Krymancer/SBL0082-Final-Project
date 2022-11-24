@@ -3,6 +3,10 @@
 [d edition pro ]
 [d chip 18F4550 ]
 [d frameptr 4065 ]
+"670 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+"1368
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
@@ -15,6 +19,12 @@
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -23,21 +33,68 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"15 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"3 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
+[v _envia_nibble_lcd envia_nibble_lcd `(v  1 e 1 0 ]
+"16
+[v _envia_byte_lcd envia_byte_lcd `(v  1 e 1 0 ]
+"24
+[v _escreve_lcd escreve_lcd `T(v  1 e 1 0 ]
+"26
+[v _limpa_lcd limpa_lcd `(v  1 e 1 0 ]
+"32
+[v _inicializa_lcd inicializa_lcd `(v  1 e 1 0 ]
+"21 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+[v _putch putch `(v  1 e 1 0 ]
+"27
 [v _configurePins configurePins `(v  1 e 1 0 ]
-"29
+"50
 [v _configureIRQ configureIRQ `(v  1 e 1 0 ]
-"52
+"73
 [v _setup setup `(v  1 e 1 0 ]
-"61
+"86
 [v _main main `(v  1 e 1 0 ]
-"67
+"95
 [v _isr isr `IIH(v  1 e 1 0 ]
-[s S33 . 1 `uc 1 RD0 1 0 :1:0 
+[s S235 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 RC4 1 0 :1:4 
+`uc 1 RC5 1 0 :1:5 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+"2605 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
+[s S244 . 1 `uc 1 T1OSO 1 0 :1:0 
+`uc 1 T1OSI 1 0 :1:1 
+`uc 1 CCP1 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 TX 1 0 :1:6 
+`uc 1 RX 1 0 :1:7 
+]
+[s S251 . 1 `uc 1 T13CKI 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 P1A 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 CK 1 0 :1:6 
+`uc 1 DT 1 0 :1:7 
+]
+[s S258 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 CCP2 1 0 :1:1 
+`uc 1 PA1 1 0 :1:2 
+]
+[s S262 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 PA2 1 0 :1:1 
+]
+[u S265 . 1 `S235 1 . 1 0 `S244 1 . 1 0 `S251 1 . 1 0 `S258 1 . 1 0 `S262 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES265  1 e 1 @3970 ]
+[s S111 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -46,8 +103,8 @@
 `uc 1 RD6 1 0 :1:6 
 `uc 1 RD7 1 0 :1:7 
 ]
-"2736 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-[s S206 . 1 `uc 1 SPP0 1 0 :1:0 
+"2736
+[s S413 . 1 `uc 1 SPP0 1 0 :1:0 
 `uc 1 SPP1 1 0 :1:1 
 `uc 1 SPP2 1 0 :1:2 
 `uc 1 SPP3 1 0 :1:3 
@@ -56,12 +113,12 @@
 `uc 1 SPP6 1 0 :1:6 
 `uc 1 SPP7 1 0 :1:7 
 ]
-[s S215 . 1 `uc 1 . 1 0 :7:0 
+[s S422 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S218 . 1 `S33 1 . 1 0 `S206 1 . 1 0 `S215 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES218  1 e 1 @3971 ]
-[s S64 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S425 . 1 `S111 1 . 1 0 `S413 1 . 1 0 `S422 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES425  1 e 1 @3971 ]
+[s S62 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -71,7 +128,7 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "3657
-[s S73 . 1 `uc 1 RB0 1 0 :1:0 
+[s S71 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -80,9 +137,26 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S82 . 1 `S64 1 . 1 0 `S73 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES82  1 e 1 @3987 ]
-[s S24 . 1 `uc 1 TRISD0 1 0 :1:0 
+[u S80 . 1 `S62 1 . 1 0 `S71 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES80  1 e 1 @3987 ]
+[s S30 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"3875
+[s S37 . 1 `uc 1 RC0 1 0 :1:0 
+`uc 1 RC1 1 0 :1:1 
+`uc 1 RC2 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 RC6 1 0 :1:6 
+`uc 1 RC7 1 0 :1:7 
+]
+[u S44 . 1 `S30 1 . 1 0 `S37 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES44  1 e 1 @3988 ]
+[s S102 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -92,11 +166,11 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "4033
-[u S42 . 1 `S24 1 . 1 0 `S33 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES42  1 e 1 @3989 ]
+[u S120 . 1 `S102 1 . 1 0 `S111 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES120  1 e 1 @3989 ]
 "8413
 [v _INTCON3 INTCON3 `VEuc  1 e 1 @4080 ]
-[s S157 . 1 `uc 1 INT1IF 1 0 :1:0 
+[s S195 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 INT2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1IE 1 0 :1:3 
@@ -106,7 +180,7 @@
 `uc 1 INT2IP 1 0 :1:7 
 ]
 "8440
-[s S166 . 1 `uc 1 INT1F 1 0 :1:0 
+[s S204 . 1 `uc 1 INT1F 1 0 :1:0 
 `uc 1 INT2F 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1E 1 0 :1:3 
@@ -115,11 +189,11 @@
 `uc 1 INT1P 1 0 :1:6 
 `uc 1 INT2P 1 0 :1:7 
 ]
-[u S175 . 1 `S157 1 . 1 0 `S166 1 . 1 0 ]
-[v _INTCON3bits INTCON3bits `VES175  1 e 1 @4080 ]
+[u S213 . 1 `S195 1 . 1 0 `S204 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES213  1 e 1 @4080 ]
 "8505
 [v _INTCON2 INTCON2 `VEuc  1 e 1 @4081 ]
-[s S106 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S144 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -129,7 +203,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "8614
-[s S115 . 1 `uc 1 . 1 0 :1:0 
+[s S153 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -138,38 +212,127 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S124 . 1 `uc 1 . 1 0 :6:0 
+[s S162 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S128 . 1 `S106 1 . 1 0 `S115 1 . 1 0 `S124 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES128  1 e 1 @4082 ]
+[u S166 . 1 `S144 1 . 1 0 `S153 1 . 1 0 `S162 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES166  1 e 1 @4082 ]
 "8973
 [v _ADIE ADIE `VEb  1 e 0 @31982 ]
 "10269
 [v _PEIE PEIE `VEb  1 e 0 @32662 ]
-"61 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"55 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v _flags flags `i  1 s 2 flags ]
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"69
+[v _nout nout `i  1 s 2 nout ]
+"86 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"65
+"93
 } 0
-"52
+"73
 [v _setup setup `(v  1 e 1 0 ]
 {
-"59
+"84
 } 0
-"15
+"26 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
+[v _limpa_lcd limpa_lcd `(v  1 e 1 0 ]
+{
+"30
+} 0
+"32
+[v _inicializa_lcd inicializa_lcd `(v  1 e 1 0 ]
+{
+"57
+} 0
+"27 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _configurePins configurePins `(v  1 e 1 0 ]
 {
-"27
+"48
 } 0
-"29
+"50
 [v _configureIRQ configureIRQ `(v  1 e 1 0 ]
 {
-"50
+"71
 } 0
-"67
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.39v  1 a 2 34 ]
+"5
+[v printf@fmt fmt `*.32Cuc  1 p 2 30 ]
+"13
+} 0
+"1368 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1371
+[v vfprintf@cfmt cfmt `*.32uc  1 a 2 28 ]
+[s S481 _IO_FILE 0 ]
+"1368
+[v vfprintf@fp fp `*.2S481  1 p 2 22 ]
+[v vfprintf@fmt fmt `*.32Cuc  1 p 2 24 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 26 ]
+"1382
+} 0
+"670
+[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+{
+[s S481 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.2S481  1 p 2 16 ]
+[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 18 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 20 ]
+"1365
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 7 ]
+[s S966 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S966  1 p 2 9 ]
+"21
+} 0
+"21 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@data data `uc  1 a 1 wreg ]
+[v putch@data data `uc  1 a 1 wreg ]
+"23
+[v putch@data data `uc  1 a 1 6 ]
+"24
+} 0
+"24 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
+[v _escreve_lcd escreve_lcd `T(v  1 e 1 0 ]
+{
+[v escreve_lcd@c c `uc  1 a 1 wreg ]
+[v escreve_lcd@c c `uc  1 a 1 wreg ]
+[v escreve_lcd@c c `uc  1 a 1 5 ]
+} 0
+"16
+[v _envia_byte_lcd envia_byte_lcd `(v  1 e 1 0 ]
+{
+[v envia_byte_lcd@endereco endereco `uc  1 a 1 wreg ]
+[v envia_byte_lcd@endereco endereco `uc  1 a 1 wreg ]
+[v envia_byte_lcd@dado dado `uc  1 p 1 3 ]
+"18
+[v envia_byte_lcd@endereco endereco `uc  1 a 1 4 ]
+"22
+} 0
+"3
+[v _envia_nibble_lcd envia_nibble_lcd `(v  1 e 1 0 ]
+{
+[v envia_nibble_lcd@dado dado `uc  1 a 1 wreg ]
+[v envia_nibble_lcd@dado dado `uc  1 a 1 wreg ]
+"5
+[v envia_nibble_lcd@dado dado `uc  1 a 1 2 ]
+"14
+} 0
+"95 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _isr isr `IIH(v  1 e 1 0 ]
 {
-"77
+"109
 } 0

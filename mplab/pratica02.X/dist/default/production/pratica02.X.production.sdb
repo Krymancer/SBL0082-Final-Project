@@ -3,10 +3,27 @@
 [d edition pro ]
 [d chip 18F4550 ]
 [d frameptr 4065 ]
-"670 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+"1 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+[v i2_abs abs `(i  1 e 2 0 ]
+"9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+[v i2___aodiv __aodiv `(o  1 e 8 0 ]
+"9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+[v i2___aomod __aomod `(o  1 e 8 0 ]
+"72 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v _pad pad `(i  1 s 2 pad ]
+[v i2_pad pad `(i  1 s 2 i2_pad ]
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+[v i2_dtoa dtoa `(i  1 s 2 i2_dtoa ]
+"670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
+[v i2_vfpfcnvrt vfpfcnvrt `(i  1 s 2 i2_vfpfcnvrt ]
 "1368
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
+[v i2_vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
@@ -21,10 +38,13 @@
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
+[v i2_fputc fputc `(i  1 e 2 0 ]
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputs.c
 [v _fputs fputs `(i  1 e 2 0 ]
+[v i2_fputs fputs `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
+[v i2_printf printf `(i  1 e 2 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -35,33 +55,43 @@
 [v ___flmul __flmul `(d  1 e 4 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
 [v _strlen strlen `(ui  1 e 2 0 ]
+[v i2_strlen strlen `(ui  1 e 2 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
 "3 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
 [v _envia_nibble_lcd envia_nibble_lcd `(v  1 e 1 0 ]
+[v i2_envia_nibble_lcd envia_nibble_lcd `(v  1 e 1 0 ]
 "16
 [v _envia_byte_lcd envia_byte_lcd `(v  1 e 1 0 ]
+[v i2_envia_byte_lcd envia_byte_lcd `(v  1 e 1 0 ]
 "24
 [v _escreve_lcd escreve_lcd `T(v  1 e 1 0 ]
+[v i2_escreve_lcd escreve_lcd `T(v  1 e 1 0 ]
 "26
 [v _limpa_lcd limpa_lcd `(v  1 e 1 0 ]
+[v i2_limpa_lcd limpa_lcd `(v  1 e 1 0 ]
 "32
 [v _inicializa_lcd inicializa_lcd `(v  1 e 1 0 ]
-"21 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"29 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _putch putch `(v  1 e 1 0 ]
-"27
+[v i2_putch putch `(v  1 e 1 0 ]
+"34
 [v _configurePins configurePins `(v  1 e 1 0 ]
-"50
+"59
 [v _configureIRQ configureIRQ `(v  1 e 1 0 ]
-"73
+"82
+[v _initTimer0 initTimer0 `(v  1 e 1 0 ]
+"101
 [v _setup setup `(v  1 e 1 0 ]
-"86
+"115
 [v _main main `(v  1 e 1 0 ]
-"95
+"124
+[v _clearInterruptFlags clearInterruptFlags `(v  1 e 1 0 ]
+"131
 [v _isr isr `IIH(v  1 e 1 0 ]
-[s S235 . 1 `uc 1 RC0 1 0 :1:0 
+[s S279 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -71,29 +101,29 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "2605 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-[s S244 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S288 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S251 . 1 `uc 1 T13CKI 1 0 :1:0 
+[s S295 . 1 `uc 1 T13CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S258 . 1 `uc 1 . 1 0 :1:0 
+[s S302 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[s S262 . 1 `uc 1 . 1 0 :1:0 
+[s S306 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
-[u S265 . 1 `S235 1 . 1 0 `S244 1 . 1 0 `S251 1 . 1 0 `S258 1 . 1 0 `S262 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES265  1 e 1 @3970 ]
+[u S309 . 1 `S279 1 . 1 0 `S288 1 . 1 0 `S295 1 . 1 0 `S302 1 . 1 0 `S306 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES309  1 e 1 @3970 ]
 [s S111 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
@@ -104,7 +134,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "2736
-[s S413 . 1 `uc 1 SPP0 1 0 :1:0 
+[s S474 . 1 `uc 1 SPP0 1 0 :1:0 
 `uc 1 SPP1 1 0 :1:1 
 `uc 1 SPP2 1 0 :1:2 
 `uc 1 SPP3 1 0 :1:3 
@@ -113,11 +143,11 @@
 `uc 1 SPP6 1 0 :1:6 
 `uc 1 SPP7 1 0 :1:7 
 ]
-[s S422 . 1 `uc 1 . 1 0 :7:0 
+[s S483 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S425 . 1 `S111 1 . 1 0 `S413 1 . 1 0 `S422 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES425  1 e 1 @3971 ]
+[u S486 . 1 `S111 1 . 1 0 `S474 1 . 1 0 `S483 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES486  1 e 1 @3971 ]
 [s S62 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
@@ -168,6 +198,29 @@
 "4033
 [u S120 . 1 `S102 1 . 1 0 `S111 1 . 1 0 ]
 [v _TRISDbits TRISDbits `VES120  1 e 1 @3989 ]
+[s S235 . 1 `uc 1 T2CKPS 1 0 :2:0 
+`uc 1 TMR2ON 1 0 :1:2 
+`uc 1 TOUTPS 1 0 :4:3 
+]
+"7228
+[s S239 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+`uc 1 T2CKPS1 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 T2OUTPS0 1 0 :1:3 
+`uc 1 T2OUTPS1 1 0 :1:4 
+`uc 1 T2OUTPS2 1 0 :1:5 
+`uc 1 T2OUTPS3 1 0 :1:6 
+]
+[s S247 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 TOUTPS0 1 0 :1:3 
+`uc 1 TOUTPS1 1 0 :1:4 
+`uc 1 TOUTPS2 1 0 :1:5 
+`uc 1 TOUTPS3 1 0 :1:6 
+]
+[u S253 . 1 `S235 1 . 1 0 `S239 1 . 1 0 `S247 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES253  1 e 1 @4042 ]
+"7298
+[v _PR2 PR2 `VEuc  1 e 1 @4043 ]
 "8413
 [v _INTCON3 INTCON3 `VEuc  1 e 1 @4080 ]
 [s S195 . 1 `uc 1 INT1IF 1 0 :1:0 
@@ -222,104 +275,171 @@
 [v _ADIE ADIE `VEb  1 e 0 @31982 ]
 "10269
 [v _PEIE PEIE `VEb  1 e 0 @32662 ]
+"10839
+[v _TMR2IE TMR2IE `VEb  1 e 0 @31977 ]
+"10842
+[v _TMR2IF TMR2IF `VEb  1 e 0 @31985 ]
 "55 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _flags flags `i  1 s 2 flags ]
 [v _prec prec `i  1 s 2 prec ]
 [v _width width `i  1 s 2 width ]
+"66
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"86 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"26 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+[v _currentTime currentTime `i  1 e 2 0 ]
+"115
 [v _main main `(v  1 e 1 0 ]
 {
-"93
+"122
 } 0
-"73
+"101
 [v _setup setup `(v  1 e 1 0 ]
 {
-"84
+"113
 } 0
 "26 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
 [v _limpa_lcd limpa_lcd `(v  1 e 1 0 ]
 {
 "30
 } 0
-"32
+"82 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+[v _initTimer0 initTimer0 `(v  1 e 1 0 ]
+{
+"98
+} 0
+"32 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
 [v _inicializa_lcd inicializa_lcd `(v  1 e 1 0 ]
 {
 "57
 } 0
-"27 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"34 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _configurePins configurePins `(v  1 e 1 0 ]
 {
-"48
+"57
 } 0
-"50
+"59
 [v _configureIRQ configureIRQ `(v  1 e 1 0 ]
 {
-"71
+"80
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
 {
 "8
-[v printf@ap ap `[1]*.39v  1 a 2 34 ]
+[v printf@ap ap `[1]*.39v  1 a 2 14 ]
 "5
-[v printf@fmt fmt `*.32Cuc  1 p 2 30 ]
+[v printf@fmt fmt `*.25Cuc  1 p 2 10 ]
 "13
 } 0
 "1368 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
 "1371
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 28 ]
-[s S481 _IO_FILE 0 ]
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 8 ]
+[s S542 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S481  1 p 2 22 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 24 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 26 ]
+[v vfprintf@fp fp `*.2S542  1 p 2 94 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 96 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 98 ]
 "1382
 } 0
 "670
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S481 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.2S481  1 p 2 16 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 18 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 20 ]
+"674
+[v vfpfcnvrt@ll ll `o  1 a 8 0 ]
+[s S542 _IO_FILE 0 ]
+"670
+[v vfpfcnvrt@fp fp `*.2S542  1 p 2 86 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 88 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 90 ]
 "1365
+} 0
+"274
+[v _dtoa dtoa `(i  1 s 2 dtoa ]
+{
+"277
+[v dtoa@n n `o  1 a 8 76 ]
+"276
+[v dtoa@i i `i  1 a 2 84 ]
+[v dtoa@s s `i  1 a 2 74 ]
+[v dtoa@w w `i  1 a 2 72 ]
+[v dtoa@p p `i  1 a 2 70 ]
+[s S542 _IO_FILE 0 ]
+"274
+[v dtoa@fp fp `*.2S542  1 p 2 50 ]
+[v dtoa@d d `o  1 p 8 52 ]
+"315
+} 0
+"72
+[v _pad pad `(i  1 s 2 pad ]
+{
+"74
+[v pad@w w `i  1 a 2 48 ]
+[v pad@i i `i  1 a 2 46 ]
+[s S542 _IO_FILE 0 ]
+"72
+[v pad@fp fp `*.2S542  1 p 2 39 ]
+[v pad@buf buf `*.39uc  1 p 2 41 ]
+[v pad@p p `i  1 p 2 43 ]
+"95
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"7
+[v strlen@a a `*.39Cuc  1 a 2 19 ]
+"5
+[v strlen@s s `*.39Cuc  1 p 2 17 ]
+"12
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 37 ]
+"10
+[v fputs@c c `uc  1 a 1 36 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 32 ]
+[s S1050 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1050  1 p 2 34 ]
+"19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
-[v fputc@c c `i  1 p 2 7 ]
-[s S966 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S966  1 p 2 9 ]
+[v fputc@c c `i  1 p 2 23 ]
+[s S1050 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1050  1 p 2 25 ]
 "21
 } 0
-"21 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"29 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 wreg ]
-"23
-[v putch@data data `uc  1 a 1 6 ]
-"24
+"31
+[v putch@data data `uc  1 a 1 22 ]
+"32
 } 0
 "24 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
 [v _escreve_lcd escreve_lcd `T(v  1 e 1 0 ]
 {
 [v escreve_lcd@c c `uc  1 a 1 wreg ]
 [v escreve_lcd@c c `uc  1 a 1 wreg ]
-[v escreve_lcd@c c `uc  1 a 1 5 ]
+[v escreve_lcd@c c `uc  1 a 1 21 ]
 } 0
 "16
 [v _envia_byte_lcd envia_byte_lcd `(v  1 e 1 0 ]
 {
 [v envia_byte_lcd@endereco endereco `uc  1 a 1 wreg ]
 [v envia_byte_lcd@endereco endereco `uc  1 a 1 wreg ]
-[v envia_byte_lcd@dado dado `uc  1 p 1 3 ]
+[v envia_byte_lcd@dado dado `uc  1 p 1 19 ]
 "18
-[v envia_byte_lcd@endereco endereco `uc  1 a 1 4 ]
+[v envia_byte_lcd@endereco endereco `uc  1 a 1 20 ]
 "22
 } 0
 "3
@@ -328,11 +448,188 @@
 [v envia_nibble_lcd@dado dado `uc  1 a 1 wreg ]
 [v envia_nibble_lcd@dado dado `uc  1 a 1 wreg ]
 "5
-[v envia_nibble_lcd@dado dado `uc  1 a 1 2 ]
+[v envia_nibble_lcd@dado dado `uc  1 a 1 18 ]
 "14
 } 0
-"95 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"1 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 35 ]
+"4
+} 0
+"9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aomod.c
+[v ___aomod __aomod `(o  1 e 8 0 ]
+{
+"12
+[v ___aomod@sign sign `uc  1 a 1 34 ]
+[v ___aomod@counter counter `uc  1 a 1 33 ]
+"9
+[v ___aomod@dividend dividend `o  1 p 8 17 ]
+[v ___aomod@divisor divisor `o  1 p 8 25 ]
+"36
+} 0
+"9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aodiv.c
+[v ___aodiv __aodiv `(o  1 e 8 0 ]
+{
+"12
+[v ___aodiv@quotient quotient `o  1 a 8 35 ]
+"13
+[v ___aodiv@sign sign `uc  1 a 1 34 ]
+[v ___aodiv@counter counter `uc  1 a 1 33 ]
+"9
+[v ___aodiv@dividend dividend `o  1 p 8 17 ]
+[v ___aodiv@divisor divisor `o  1 p 8 25 ]
+"43
+} 0
+"131 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _isr isr `IIH(v  1 e 1 0 ]
 {
-"109
+"159
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
+[v i2_printf printf `(i  1 e 2 0 ]
+{
+[v i2printf@ap printf `[1]*.39v  1 a 2 6 ]
+[v i2printf@ret printf `i  1 a 2 4 ]
+[v i2printf@fmt fmt `*.25Cuc  1 p 2 0 ]
+"13
+} 0
+"1368 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\doprnt.c
+[v i2_vfprintf vfprintf `(i  1 e 2 0 ]
+{
+[v i2vfprintf@cfmt vfprintf `*.25uc  1 a 2 91 ]
+[s S542 _IO_FILE 0 ]
+[v i2vfprintf@fp fp `*.2S542  1 p 2 85 ]
+[v i2vfprintf@fmt fmt `*.25Cuc  1 p 2 87 ]
+[v i2vfprintf@ap ap `*.39*.39v  1 p 2 89 ]
+"1382
+} 0
+"670
+[v i2_vfpfcnvrt vfpfcnvrt `(i  1 s 2 i2_vfpfcnvrt ]
+{
+[v i2vfpfcnvrt@ll vfpfcnvrt `o  1 a 8 77 ]
+[s S542 _IO_FILE 0 ]
+[v i2vfpfcnvrt@fp fp `*.2S542  1 p 2 69 ]
+[v i2vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 71 ]
+[v i2vfpfcnvrt@ap ap `*.39*.39v  1 p 2 73 ]
+"1365
+} 0
+"274
+[v i2_dtoa dtoa `(i  1 s 2 i2_dtoa ]
+{
+[v i2dtoa@n dtoa `o  1 a 8 59 ]
+[v i2dtoa@i dtoa `i  1 a 2 67 ]
+[v i2dtoa@s dtoa `i  1 a 2 57 ]
+[v i2dtoa@w dtoa `i  1 a 2 55 ]
+[v i2dtoa@p dtoa `i  1 a 2 53 ]
+[s S542 _IO_FILE 0 ]
+[v i2dtoa@fp fp `*.2S542  1 p 2 33 ]
+[v i2dtoa@d d `o  1 p 8 35 ]
+"315
+} 0
+"72
+[v i2_pad pad `(i  1 s 2 i2_pad ]
+{
+[v i2pad@w pad `i  1 a 2 31 ]
+[v i2pad@i pad `i  1 a 2 29 ]
+[s S542 _IO_FILE 0 ]
+[v i2pad@fp fp `*.2S542  1 p 2 22 ]
+[v i2pad@buf buf `*.39uc  1 p 2 24 ]
+[v i2pad@p p `i  1 p 2 26 ]
+"95
+} 0
+"5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\strlen.c
+[v i2_strlen strlen `(ui  1 e 2 0 ]
+{
+[v i2strlen@a strlen `*.39Cuc  1 a 2 2 ]
+[v i2strlen@s s `*.39Cuc  1 p 2 0 ]
+"12
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputs.c
+[v i2_fputs fputs `(i  1 e 2 0 ]
+{
+[v i2fputs@i fputs `i  1 a 2 20 ]
+[v i2fputs@c fputs `uc  1 a 1 19 ]
+[v i2fputs@s s `*.39Cuc  1 p 2 15 ]
+[s S1050 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v i2fputs@fp fp `*.2S1050  1 p 2 17 ]
+"19
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
+[v i2_fputc fputc `(i  1 e 2 0 ]
+{
+[v i2fputc@c c `i  1 p 2 6 ]
+[s S1050 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v i2fputc@fp fp `*.2S1050  1 p 2 8 ]
+"21
+} 0
+"29 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+[v i2_putch putch `(v  1 e 1 0 ]
+{
+[v i2putch@data data `uc  1 a 1 wreg ]
+[v i2putch@data data `uc  1 a 1 wreg ]
+"31
+[v i2putch@data data `uc  1 a 1 5 ]
+"32
+} 0
+"24 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
+[v i2_escreve_lcd escreve_lcd `T(v  1 e 1 0 ]
+{
+[v i2escreve_lcd@c c `uc  1 a 1 wreg ]
+[v i2escreve_lcd@c c `uc  1 a 1 wreg ]
+[v i2escreve_lcd@c c `uc  1 a 1 4 ]
+} 0
+"1 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\abs.c
+[v i2_abs abs `(i  1 e 2 0 ]
+{
+[v i2abs@a a `i  1 p 2 18 ]
+"4
+} 0
+"9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aomod.c
+[v i2___aomod __aomod `(o  1 e 8 0 ]
+{
+[v i2___aomod@sign __aomod `uc  1 a 1 17 ]
+[v i2___aomod@counter __aomod `uc  1 a 1 16 ]
+[v i2___aomod@dividend dividend `o  1 p 8 0 ]
+[v i2___aomod@divisor divisor `o  1 p 8 8 ]
+"36
+} 0
+"9 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\aodiv.c
+[v i2___aodiv __aodiv `(o  1 e 8 0 ]
+{
+[v i2___aodiv@quotient __aodiv `o  1 a 8 18 ]
+[v i2___aodiv@sign __aodiv `uc  1 a 1 17 ]
+[v i2___aodiv@counter __aodiv `uc  1 a 1 16 ]
+[v i2___aodiv@dividend dividend `o  1 p 8 0 ]
+[v i2___aodiv@divisor divisor `o  1 p 8 8 ]
+"43
+} 0
+"26 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
+[v i2_limpa_lcd limpa_lcd `(v  1 e 1 0 ]
+{
+"30
+} 0
+"16
+[v i2_envia_byte_lcd envia_byte_lcd `(v  1 e 1 0 ]
+{
+[v i2envia_byte_lcd@endereco endereco `uc  1 a 1 wreg ]
+[v i2envia_byte_lcd@endereco endereco `uc  1 a 1 wreg ]
+[v i2envia_byte_lcd@dado dado `uc  1 p 1 2 ]
+"18
+[v i2envia_byte_lcd@endereco endereco `uc  1 a 1 3 ]
+"22
+} 0
+"3
+[v i2_envia_nibble_lcd envia_nibble_lcd `(v  1 e 1 0 ]
+{
+[v i2envia_nibble_lcd@dado dado `uc  1 a 1 wreg ]
+[v i2envia_nibble_lcd@dado dado `uc  1 a 1 wreg ]
+"5
+[v i2envia_nibble_lcd@dado dado `uc  1 a 1 1 ]
+"14
+} 0
+"124 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+[v _clearInterruptFlags clearInterruptFlags `(v  1 e 1 0 ]
+{
+"129
 } 0

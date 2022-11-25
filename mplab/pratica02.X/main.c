@@ -19,10 +19,11 @@
 
 #define BUZZ PORTCbits.RC7
 
-
 #define IDLE 0
 #define WAIT 1
 #define CURRENT IDLE
+
+int currentTime = 0;
 
 // Override putch function to redirect printf from stdio to lcd
 void putch(char data)
@@ -78,6 +79,25 @@ void configureIRQ()
     INTCONbits.GIE = 1;     /* Enable Global Interrupt*/
 }
 
+void initTimer0()
+{   
+    T2CONbits.T2CKPS1 = 0; // Pre scaler 1:4
+    T2CONbits.T2CKPS0 = 1; // Pre scaler 1:4
+    PR2 = 250;  // Para estourar a cada 1 ms
+    //T2OUTPS3 a T2OUTPS0 controlam quantos 
+    // estouros de timer2 precisam pra levar TMR2IF pra 1     
+    T2CONbits.T2OUTPS3 = 1;
+    T2CONbits.T2OUTPS2 = 0;
+    T2CONbits.T2OUTPS1 = 0;
+    T2CONbits.T2OUTPS0 = 1;
+    
+    TMR2IE = 1;
+    TMR2IF = 0;
+    
+    T2CONbits.TMR2ON = 1; // Coloca timer pra contar
+}
+
+
 void setup()
 {
     LED1 = 0;
@@ -89,31 +109,55 @@ void setup()
 
     inicializa_lcd();
     limpa_lcd();
+    initTimer0();
 }
 
 void main(void)
 {
     setup();
-    printf("Hello, World!");
+    printf("OK");
 
     while (1)
-    {}
+    {
+        
+    }
+}
+
+void clearInterruptFlags(){
+    TMR2IF = 0;   
+    INTCONbits.INT0IF = 0;
+    INTCON3bits.INT1IF = 0;
+    INTCON3bits.INT2IF = 0;
 }
 
 void __interrupt(high_priority) isr(void)
 {
-    if (INTCONbits.INT0IF)
+    if (INTCONbits.INT0IF){
+        limpa_lcd();
+        printf("Timmer: %d",currentTime);
         LED1 = ~(LED1);
-
-    if (INTCON3bits.INT1IF)
+        clearInterruptFlags();
+        return;
+    }
+        
+    if (INTCON3bits.INT1IF) {
         LED2 = ~(LED2);
+        clearInterruptFlags();
+        return;
+    }
+        
 
-    if (INTCON3bits.INT2IF)
+    if (INTCON3bits.INT2IF){
         LED3 = ~(LED3);
-
-    INTCONbits.INT0IF = 0;
-    INTCON3bits.INT1IF = 0;
-    INTCON3bits.INT2IF = 0;
+        clearInterruptFlags();
+    }
+       
+    
+    if(TMR2IF) {
+        currentTime++;
+        clearInterruptFlags();
+        return;
+    }
 }
 
 void state(){

@@ -5,25 +5,28 @@
 
 #include "lcd.h"
 #include "config.h"
+#include "pinconfig.h"
 
-//#pragma config PBADEN = OFF;
-#pragma WDTEN = OFF
+#define ST_IDLE 0xf01
+#define ST_INIT 0xf02
+#define ST_WAIT 0xf03
+#define ST_RESET 0xf04
 
-#define LED1 PORTCbits.RC0
-#define LED2 PORTCbits.RC1
-#define LED3 PORTCbits.RC2
+#define NO_PLAYER 0
+#define PLAYER1 0xd01
+#define PLAYER2 0xd02
 
-#define SWT1 PORTBbits.RB0
-#define SWT2 PORTBbits.RB1
-#define SWT3 PORTBbits.RB2
-
-#define BUZZ PORTCbits.RC7
-
-#define IDLE 0
-#define WAIT 1
-#define CURRENT IDLE
+int currentState = 0xff;
 
 int currentTime = 0;
+
+int firstPlayer = NO_PLAYER;
+
+int player1Pressed = 0;
+int player2Pressed = 0;
+
+float player1Time = 0;
+float player2Time = 0;
 
 // Override putch function to redirect printf from stdio to lcd
 void putch(char data)
@@ -31,140 +34,142 @@ void putch(char data)
     escreve_lcd(data);   
 }
 
-void configurePins()
-{
-    TRISCbits.RC0 = 0; /* Make RC0 pin as an output pin */
-    TRISCbits.RC1 = 0; /* Make RC1 pin as an output pin */
-    TRISCbits.RC2 = 0; /* Make RC2 pin as an output pin */
-
-    TRISBbits.RB0 = 1; /* Make RB0 pin as an input pin */
-    TRISBbits.RB1 = 1; /* Make RB1 pin as an input pin */
-    TRISBbits.RB2 = 1; /* Make RB2 pin as an input pin */
-
-    TRISBbits.TRISB0 = 1; /* Make INT0 pin as an input pin*/
-    TRISBbits.TRISB1 = 1; /* Make INT1 pin as an input pin*/
-    TRISBbits.TRISB2 = 1; /* Make INT2 pin as an input pin*/
-
-    TRISDbits.RD0 = 0; /* Make RD0 pin as an output pin */
-    TRISDbits.RD1 = 0; /* Make RD1 pin as an output pin */
-
-    TRISDbits.RD4 = 0; /* Make RD4 pin as an output pin */
-    TRISDbits.RD5 = 0; /* Make RD5 pin as an output pin */
-    TRISDbits.RD6 = 0; /* Make RD6 pin as an output pin */
-    TRISDbits.RD7 = 0; /* Make RD7 pin as an output pin */
-
-    TRISCbits.RC7 = 0; /* Make RC7 pin as an output pin */
+void displayPlayers(){
+    limpa_lcd();
+    if(player1Pressed && player2Pressed) {
+        printf("P1: %.2f s",player1Time);        
+        caracter_inicio(2,0);
+        printf("P2: %.2f s", player2Time);
+    }else if(player1Pressed && !player2Pressed) {
+        printf("P1: %.2f s",player1Time);        
+        caracter_inicio(2,0);
+        printf("P2: - s");
+    }else if(!player1Pressed && player2Pressed) {
+        printf("P1: - s");        
+        caracter_inicio(2,0);
+        printf("P2: %.2f s", player2Time);
+    }else {
+        printf("P1: - s");        
+        caracter_inicio(2,0);
+        printf("P2: - s");
+    }
 }
 
-void configureIRQ()
-{
-    ADIE = 0; /* A/D interrupts will be used */
-    PEIE = 1; /* all peripheral interrupts are enabled */
-    ei();     /* enable all interrupts */
-
-    INTCON2 = 0x00; /* Set Interrupt detection on falling Edge*/
-    INTCON3 = 0x00;
-
-    INTCONbits.INT0IF = 0; /* Clear INT0IF flag*/
-    INTCONbits.INT0IE = 1; /* Enable INT0 external interrupt*/
-
-    INTCON3bits.INT1F = 0; /* Clear INT1IF flag*/
-    INTCON3bits.INT1E = 1; /* Enable INT1 external interrupt*/
-
-    INTCON3bits.INT2F = 0; /* Clear INT2IF flag*/
-    INTCON3bits.INT2E = 1; /* Enable INT2 external interrupt*/
-
-    INTCON3bits.INT1IF = 0; // Initialize flag of interrupt
-    INTCON3bits.INT2IF = 0; // Initialize flag of interrupt
-    INTCONbits.GIE = 1;     /* Enable Global Interrupt*/
-}
-
-void initTimer0()
-{   
-    T2CONbits.T2CKPS1 = 0; // Pre scaler 1:4
-    T2CONbits.T2CKPS0 = 1; // Pre scaler 1:4
-    PR2 = 250;  // Para estourar a cada 1 ms
-    //T2OUTPS3 a T2OUTPS0 controlam quantos 
-    // estouros de timer2 precisam pra levar TMR2IF pra 1     
-    T2CONbits.T2OUTPS3 = 1;
-    T2CONbits.T2OUTPS2 = 0;
-    T2CONbits.T2OUTPS1 = 0;
-    T2CONbits.T2OUTPS0 = 1;
+void reset(){
+    currentTime = 0;
+    currentState = ST_IDLE;
     
-    TMR2IE = 1;
-    TMR2IF = 0;
+    firstPlayer = NO_PLAYER;
     
-    T2CONbits.TMR2ON = 1; // Coloca timer pra contar
-}
-
-
-void setup()
-{
+    player1Time = 0;
+    player2Time = 0;
+    
+    player1Pressed = 0;
+    player2Pressed = 0;
+    
+    firstPlayer = 0;
+    
     LED1 = 0;
     LED2 = 0;
-    LED3 = 0;
-
-    configurePins();
-    configureIRQ();
-
-    inicializa_lcd();
+    
     limpa_lcd();
-    initTimer0();
+    printf("IDLE...");
 }
+
+void stateMachine(){
+    switch(currentState){
+        case ST_IDLE: {
+            break;
+        }
+        case ST_INIT: {
+            BUZZ = 1;
+            __delay_ms(500);
+            BUZZ = 0;
+            
+            currentState = ST_WAIT;
+            currentTime = 0;
+            break;
+        }
+        case ST_WAIT: {
+            break;
+        }
+        case ST_RESET: {
+            reset();
+            break;
+        }
+        default: {
+            
+        }
+    }
+}
+
 
 void main(void)
 {
     setup();
-    printf("OK");
-
+    
+    printf("IDLE...");
+    
+    currentState = ST_IDLE;
+   
     while (1)
     {
-        
+        stateMachine();
     }
 }
-
-void clearInterruptFlags(){
-    TMR2IF = 0;   
-    INTCONbits.INT0IF = 0;
-    INTCON3bits.INT1IF = 0;
-    INTCON3bits.INT2IF = 0;
-}
-
 void __interrupt(high_priority) isr(void)
 {
     if (INTCONbits.INT0IF){
-        limpa_lcd();
-        printf("Timmer: %d",currentTime);
-        LED1 = ~(LED1);
-        clearInterruptFlags();
-        return;
+        if(currentState == ST_WAIT){
+            if(!player1Pressed){
+                player1Time = (float)currentTime/100.0;
+            
+                if(!player2Pressed) {
+                    firstPlayer = PLAYER1;
+                    LED1 = 1;
+                }
+
+                player1Pressed = 1;
+                displayPlayers();
+            }
+        }
+        
+        INTCONbits.INT0IF = 0;
     }
         
     if (INTCON3bits.INT1IF) {
-        LED2 = ~(LED2);
-        clearInterruptFlags();
-        return;
+        if(currentState == ST_WAIT){
+            if(!player2Pressed){
+                player2Time = (float)currentTime/100.0;
+
+                if(!player1Pressed) {
+                    firstPlayer = PLAYER2;
+                    LED2 = 1;
+                }
+
+                player2Pressed = 1;
+                displayPlayers();
+            }
+        }
+        
+        INTCON3bits.INT1IF = 0;
     }
         
 
     if (INTCON3bits.INT2IF){
-        LED3 = ~(LED3);
-        clearInterruptFlags();
+        if(currentState == ST_IDLE){
+            currentState = ST_INIT;
+        }
+        
+        if(currentState == ST_WAIT){
+            currentState = ST_RESET;
+        }
+        INTCON3bits.INT2IF = 0;
     }
        
     
     if(TMR2IF) {
-        currentTime++;
-        clearInterruptFlags();
-        return;
-    }
-}
-
-void state(){
-    switch(CURRENT){
-        case IDLE:
-            break;
-        case WAIT:
-            break;
+        currentTime++; // 10ms
+        TMR2IF = 0;
     }
 }

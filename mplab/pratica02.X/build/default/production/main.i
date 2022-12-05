@@ -5763,6 +5763,23 @@ char *tempnam(const char *, const char *);
 # 4 "main.c" 2
 
 
+# 1 "./globalscope.h" 1
+# 19 "./globalscope.h"
+int currentState;
+
+int currentTime;
+
+int firstPlayer;
+
+int player1Pressed;
+int player2Pressed;
+
+float player1Time;
+float player2Time;
+
+int gameStatus;
+# 6 "main.c" 2
+
 # 1 "./lcd.h" 1
 # 15 "./lcd.h"
  void envia_nibble_lcd(char dado);
@@ -5771,7 +5788,7 @@ char *tempnam(const char *, const char *);
  void limpa_lcd(void);
  void inicializa_lcd(void);
  void caracter_inicio(char linha,char coluna);
-# 6 "main.c" 2
+# 7 "main.c" 2
 
 # 1 "./config.h" 1
 
@@ -5836,7 +5853,7 @@ char *tempnam(const char *, const char *);
 
 
 #pragma WDTEN = OFF
-# 7 "main.c" 2
+# 8 "main.c" 2
 
 # 1 "./pinconfig.h" 1
 # 14 "./pinconfig.h"
@@ -5844,19 +5861,8 @@ void configurePins();
 void configureIRQ();
 void initTimer();
 void setup();
-# 8 "main.c" 2
-# 19 "main.c"
-int currentState = 0xff;
+# 9 "main.c" 2
 
-int currentTime = 0;
-
-int firstPlayer = 0;
-
-int player1Pressed = 0;
-int player2Pressed = 0;
-
-float player1Time = 0;
-float player2Time = 0;
 
 
 void putch(char data)
@@ -5886,9 +5892,8 @@ void displayPlayers(){
 }
 
 void reset(){
+    gameStatus = 0;
     currentTime = 0;
-    currentState = 0xf01;
-
     firstPlayer = 0;
 
     player1Time = 0;
@@ -5897,10 +5902,10 @@ void reset(){
     player1Pressed = 0;
     player2Pressed = 0;
 
-    firstPlayer = 0;
-
     PORTCbits.RC0 = 0;
     PORTCbits.RC1 = 0;
+
+    currentState = 0xf01;
 
     limpa_lcd();
     printf("IDLE...");
@@ -5911,24 +5916,72 @@ void stateMachine(){
         case 0xf01: {
             break;
         }
+        case 0xf03: {
+            if(player1Pressed && player2Pressed) gameStatus = 0;
+            break;
+        }
         case 0xf02: {
             PORTDbits.RD2 = 1;
             _delay((unsigned long)((500)*(4000000/4000.0)));
             PORTDbits.RD2 = 0;
 
             currentState = 0xf03;
+
+            limpa_lcd();
+            printf("WAITING...");
+            gameStatus = 1;
             currentTime = 0;
-            break;
-        }
-        case 0xf03: {
             break;
         }
         case 0xf04: {
             reset();
             break;
         }
-        default: {
+        case 0xf07: {
+            if((gameStatus) && (player1Pressed) && (player2Pressed)){
+                currentState = 0xf04;
+            }else if(!gameStatus) {
+                currentState = 0xf02;
+            }
+            else {
+                currentState = 0xf03;
+            }
+            break;
+        }
+        case 0xf05: {
+            if(gameStatus){
+                if(!player1Pressed){
+                    player1Time = (float)currentTime/100.0;
 
+                    if(!player2Pressed) {
+                        firstPlayer = 0xd01;
+                        PORTCbits.RC0 = 1;
+                    }
+
+                    player1Pressed = 1;
+                    displayPlayers();
+                }
+            }
+            break;
+        }
+        case 0xf06: {
+            if(gameStatus){
+                if(!player2Pressed){
+                    player2Time = (float)currentTime/100.0;
+
+                    if(!player1Pressed) {
+                        firstPlayer = 0xd02;
+                        PORTCbits.RC1 = 1;
+                    }
+
+                    player2Pressed = 1;
+                    displayPlayers();
+                }
+            }
+            break;
+        }
+        default: {
+            break;
         }
     }
 }
@@ -5937,68 +5990,28 @@ void stateMachine(){
 void main(void)
 {
     setup();
-
-    printf("IDLE...");
-
-    currentState = 0xf01;
-
-    while (1)
-    {
-        stateMachine();
-    }
+    reset();
+    while (1) stateMachine();
 }
+
 void __attribute__((picinterrupt(("high_priority")))) isr(void)
 {
-    if (INTCONbits.INT0IF){
-        if(currentState == 0xf03){
-            if(!player1Pressed){
-                player1Time = (float)currentTime/100.0;
-
-                if(!player2Pressed) {
-                    firstPlayer = 0xd01;
-                    PORTCbits.RC0 = 1;
-                }
-
-                player1Pressed = 1;
-                displayPlayers();
-            }
-        }
-
+    if(INTCONbits.INT0IF){
+        currentState = 0xf05;
         INTCONbits.INT0IF = 0;
     }
 
-    if (INTCON3bits.INT1IF) {
-        if(currentState == 0xf03){
-            if(!player2Pressed){
-                player2Time = (float)currentTime/100.0;
-
-                if(!player1Pressed) {
-                    firstPlayer = 0xd02;
-                    PORTCbits.RC1 = 1;
-                }
-
-                player2Pressed = 1;
-                displayPlayers();
-            }
-        }
-
+    if(INTCON3bits.INT1IF){
+        currentState = 0xf06;
         INTCON3bits.INT1IF = 0;
     }
 
-
-    if (INTCON3bits.INT2IF){
-        if(currentState == 0xf01){
-            currentState = 0xf02;
-        }
-
-        if(currentState == 0xf03){
-            currentState = 0xf04;
-        }
+    if(INTCON3bits.INT2IF){
+        currentState = 0xf07;
         INTCON3bits.INT2IF = 0;
     }
 
-
-    if(TMR2IF) {
+    if(TMR2IF){
         currentTime++;
         TMR2IF = 0;
     }

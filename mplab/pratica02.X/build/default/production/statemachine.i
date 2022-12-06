@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "statemachine.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "statemachine.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5618,7 +5618,7 @@ extern __attribute__((nonreentrant)) void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 32 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 1 "main.c" 2
+# 1 "statemachine.c" 2
 
 
 
@@ -5760,8 +5760,35 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 4 "main.c" 2
+# 4 "statemachine.c" 2
 
+
+# 1 "./globalscope.h" 1
+# 19 "./globalscope.h"
+int currentState;
+
+int currentTime;
+
+int firstPlayer;
+
+int player1Pressed;
+int player2Pressed;
+
+float player1Time;
+float player2Time;
+
+int gameStatus;
+# 6 "statemachine.c" 2
+
+# 1 "./lcd.h" 1
+# 15 "./lcd.h"
+ void envia_nibble_lcd(char dado);
+ void envia_byte_lcd(char endereco,char dado);
+ __attribute__((inline)) void escreve_lcd(char c);
+ void limpa_lcd(void);
+ void inicializa_lcd(void);
+ void caracter_inicio(char linha,char coluna);
+# 7 "statemachine.c" 2
 
 # 1 "./config.h" 1
 
@@ -5826,34 +5853,7 @@ char *tempnam(const char *, const char *);
 
 
 #pragma WDTEN = OFF
-# 6 "main.c" 2
-
-# 1 "./globalscope.h" 1
-# 19 "./globalscope.h"
-int currentState;
-
-int currentTime;
-
-int firstPlayer;
-
-int player1Pressed;
-int player2Pressed;
-
-float player1Time;
-float player2Time;
-
-int gameStatus;
-# 7 "main.c" 2
-
-# 1 "./lcd.h" 1
-# 15 "./lcd.h"
- void envia_nibble_lcd(char dado);
- void envia_byte_lcd(char endereco,char dado);
- __attribute__((inline)) void escreve_lcd(char c);
- void limpa_lcd(void);
- void inicializa_lcd(void);
- void caracter_inicio(char linha,char coluna);
-# 8 "main.c" 2
+# 8 "statemachine.c" 2
 
 # 1 "./pinconfig.h" 1
 # 14 "./pinconfig.h"
@@ -5861,50 +5861,120 @@ void configurePins();
 void configureIRQ();
 void initTimer();
 void setup();
-# 9 "main.c" 2
+# 9 "statemachine.c" 2
 
-# 1 "./statemachine.h" 1
-
-
-
-void displayPlayers();
-void reset();
-void stateMachine();
-# 10 "main.c" 2
-
-
-
-void putch(char data)
-{
-    escreve_lcd(data);
+void displayPlayers(){
+    limpa_lcd();
+    if(player1Pressed && player2Pressed) {
+        printf("P1: %.2f s",player1Time);
+        caracter_inicio(2,0);
+        printf("P2: %.2f s", player2Time);
+    }else if(player1Pressed && !player2Pressed) {
+        printf("P1: %.2f s",player1Time);
+        caracter_inicio(2,0);
+        printf("P2: - s");
+    }else if(!player1Pressed && player2Pressed) {
+        printf("P1: - s");
+        caracter_inicio(2,0);
+        printf("P2: %.2f s", player2Time);
+    }else {
+        printf("P1: - s");
+        caracter_inicio(2,0);
+        printf("P2: - s");
+    }
 }
 
-void main(void)
-{
-    setup();
-    reset();
-    while (1) stateMachine();
+void reset(){
+    gameStatus = 0;
+    currentTime = 0;
+    firstPlayer = 0;
+
+    player1Time = 0;
+    player2Time = 0;
+
+    player1Pressed = 0;
+    player2Pressed = 0;
+
+    PORTCbits.RC0 = 0;
+    PORTCbits.RC1 = 0;
+
+    currentState = 0xf01;
+
+    limpa_lcd();
+    printf("IDLE...");
 }
 
-void __attribute__((picinterrupt(("high_priority")))) isr(void)
-{
-    if(INTCONbits.INT0IF){
-        currentState = 0xf05;
-        INTCONbits.INT0IF = 0;
-    }
+void stateMachine(){
+    switch(currentState){
+        case 0xf01: {
+            break;
+        }
+        case 0xf03: {
+            if(player1Pressed && player2Pressed) gameStatus = 0;
+            break;
+        }
+        case 0xf02: {
+            PORTDbits.RD2 = 1;
+            _delay((unsigned long)((500)*(4000000/4000.0)));
+            PORTDbits.RD2 = 0;
 
-    if(INTCON3bits.INT1IF){
-        currentState = 0xf06;
-        INTCON3bits.INT1IF = 0;
-    }
+            currentState = 0xf03;
 
-    if(INTCON3bits.INT2IF){
-        currentState = 0xf07;
-        INTCON3bits.INT2IF = 0;
-    }
+            limpa_lcd();
+            printf("WAITING...");
+            gameStatus = 1;
+            currentTime = 0;
+            break;
+        }
+        case 0xf04: {
+            reset();
+            break;
+        }
+        case 0xf07: {
+            if((gameStatus) && (player1Pressed) && (player2Pressed)){
+                currentState = 0xf04;
+            }else if(!gameStatus) {
+                currentState = 0xf02;
+            }
+            else {
+                currentState = 0xf03;
+            }
+            break;
+        }
+        case 0xf05: {
+            if(gameStatus){
+                if(!player1Pressed){
+                    player1Time = (float)currentTime/100.0;
 
-    if(TMR2IF){
-        currentTime++;
-        TMR2IF = 0;
+                    if(!player2Pressed) {
+                        firstPlayer = 0xd01;
+                        PORTCbits.RC0 = 1;
+                    }
+
+                    player1Pressed = 1;
+                    displayPlayers();
+                }
+            }
+            break;
+        }
+        case 0xf06: {
+            if(gameStatus){
+                if(!player2Pressed){
+                    player2Time = (float)currentTime/100.0;
+
+                    if(!player1Pressed) {
+                        firstPlayer = 0xd02;
+                        PORTCbits.RC1 = 1;
+                    }
+
+                    player2Pressed = 1;
+                    displayPlayers();
+                }
+            }
+            break;
+        }
+        default: {
+            break;
+        }
     }
 }

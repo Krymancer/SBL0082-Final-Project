@@ -1,57 +1,62 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3492 `(v ~T0 @X0 1 tf1`uc ]
-"17 ./lcd.h
-[; ;./lcd.h: 17:  __attribute__((inline)) void escreve_lcd(char c);
-[v _escreve_lcd `TF3492 ~T0 @X0 0 e ]
-[p mainexit ]
-"17 ./pinconfig.h
-[; ;./pinconfig.h: 17: void setup();
-[v _setup `(v ~T0 @X0 0 e? ]
-"5 ./statemachine.h
-[; ;./statemachine.h: 5: void reset();
-[v _reset `(v ~T0 @X0 0 e? ]
-"6
-[; ;./statemachine.h: 6: void stateMachine();
-[v _stateMachine `(v ~T0 @X0 0 e? ]
-[t ~ __interrupt . k ]
-[t T36 __interrupt high_priority ]
-"8588 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8588:     struct {
-[s S360 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S360 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
-"8598
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8598:     struct {
-[s S361 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S361 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
-"8608
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8608:     struct {
-[s S362 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S362 . . GIEL GIEH ]
-"8587
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8587: typedef union {
-[u S359 `S360 1 `S361 1 `S362 1 ]
-[n S359 . . . . ]
-"8614
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8614: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
-[v _INTCONbits `VS359 ~T0 @X0 0 e@4082 ]
-"8419
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8419:     struct {
-[s S353 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S353 . INT1IF INT2IF . INT1IE INT2IE . INT1IP INT2IP ]
-"8429
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8429:     struct {
-[s S354 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S354 . INT1F INT2F . INT1E INT2E . INT1P INT2P ]
-"8418
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8418: typedef union {
-[u S352 `S353 1 `S354 1 ]
-[n S352 . . . ]
-"8440
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8440: extern volatile INTCON3bits_t INTCON3bits __attribute__((address(0xFF0)));
-[v _INTCON3bits `VS352 ~T0 @X0 0 e@4080 ]
-"10842
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 10842: extern volatile __bit TMR2IF __attribute__((address(0x7CF1)));
-[v _TMR2IF `Vb ~T0 @X0 0 e@31985 ]
+"18 ./lcd.h
+[; ;./lcd.h: 18:  void limpa_lcd(void);
+[v _limpa_lcd `(v ~T0 @X0 0 ef ]
+"111 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c99\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+"20 ./lcd.h
+[; ;./lcd.h: 20:  void caracter_inicio(char linha,char coluna);
+[v _caracter_inicio `(v ~T0 @X0 0 ef2`uc`uc ]
+"2569 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2569:     struct {
+[s S111 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S111 . RC0 RC1 RC2 . RC4 RC5 RC6 RC7 ]
+"2579
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2579:     struct {
+[s S112 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S112 . T1OSO T1OSI CCP1 . TX RX ]
+"2587
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2587:     struct {
+[s S113 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S113 . T13CKI . P1A . CK DT ]
+"2595
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2595:     struct {
+[s S114 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S114 . . CCP2 PA1 ]
+"2600
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2600:     struct {
+[s S115 :1 `uc 1 :1 `uc 1 ]
+[n S115 . . PA2 ]
+"2568
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2568: typedef union {
+[u S110 `S111 1 `S112 1 `S113 1 `S114 1 `S115 1 ]
+[n S110 . . . . . . ]
+"2605
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2605: extern volatile PORTCbits_t PORTCbits __attribute__((address(0xF82)));
+[v _PORTCbits `VS110 ~T0 @X0 0 e@3970 ]
+"2711
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2711:     struct {
+[s S117 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S117 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+"2721
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2721:     struct {
+[s S118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S118 . SPP0 SPP1 SPP2 SPP3 SPP4 SPP5 SPP6 SPP7 ]
+"2731
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2731:     struct {
+[s S119 :7 `uc 1 :1 `uc 1 ]
+[n S119 . . SS2 ]
+"2710
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2710: typedef union {
+[u S116 `S117 1 `S118 1 `S119 1 ]
+[n S116 . . . . ]
+"2736
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 2736: extern volatile PORTDbits_t PORTDbits __attribute__((address(0xF83)));
+[v _PORTDbits `VS116 ~T0 @X0 0 e@3971 ]
+[v F3152 `(v ~T0 @X0 1 tf1`ul ]
+"187 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18.h
+[v __delay `JF3152 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -562,6 +567,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8893
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"19 ./globalscope.h
+[; ;./globalscope.h: 19: int currentState;
+[v _currentState `i ~T0 @X0 1 e ]
+"21
+[; ;./globalscope.h: 21: int currentTime;
+[v _currentTime `i ~T0 @X0 1 e ]
+"23
+[; ;./globalscope.h: 23: int firstPlayer;
+[v _firstPlayer `i ~T0 @X0 1 e ]
+"25
+[; ;./globalscope.h: 25: int player1Pressed;
+[v _player1Pressed `i ~T0 @X0 1 e ]
+"26
+[; ;./globalscope.h: 26: int player2Pressed;
+[v _player2Pressed `i ~T0 @X0 1 e ]
+"28
+[; ;./globalscope.h: 28: float player1Time;
+[v _player1Time `f ~T0 @X0 1 e ]
+"29
+[; ;./globalscope.h: 29: float player2Time;
+[v _player2Time `f ~T0 @X0 1 e ]
+"31
+[; ;./globalscope.h: 31: int gameStatus;
+[v _gameStatus `i ~T0 @X0 1 e ]
 "5 ./config.h
 [p x FOSC = XT_XT ]
 "6
@@ -632,142 +661,390 @@ Version 4.0 HI-TECH Software Intermediate Code
 [p x EBTR3 = OFF ]
 "59
 [p x EBTRB = OFF ]
-"19 ./globalscope.h
-[; ;./globalscope.h: 19: int currentState;
-[v _currentState `i ~T0 @X0 1 e ]
-"21
-[; ;./globalscope.h: 21: int currentTime;
-[v _currentTime `i ~T0 @X0 1 e ]
-"23
-[; ;./globalscope.h: 23: int firstPlayer;
-[v _firstPlayer `i ~T0 @X0 1 e ]
-"25
-[; ;./globalscope.h: 25: int player1Pressed;
-[v _player1Pressed `i ~T0 @X0 1 e ]
-"26
-[; ;./globalscope.h: 26: int player2Pressed;
-[v _player2Pressed `i ~T0 @X0 1 e ]
-"28
-[; ;./globalscope.h: 28: float player1Time;
-[v _player1Time `f ~T0 @X0 1 e ]
-"29
-[; ;./globalscope.h: 29: float player2Time;
-[v _player2Time `f ~T0 @X0 1 e ]
-"31
-[; ;./globalscope.h: 31: int gameStatus;
-[v _gameStatus `i ~T0 @X0 1 e ]
-"13 main.c
-[; ;main.c: 13: void putch(char data)
-[v _putch `(v ~T0 @X0 1 ef1`uc ]
-"14
-[; ;main.c: 14: {
+"10 statemachine.c
+[; ;statemachine.c: 10: void displayPlayers(){
+[v _displayPlayers `(v ~T0 @X0 1 ef ]
 {
-[e :U _putch ]
+[e :U _displayPlayers ]
+[f ]
+"11
+[; ;statemachine.c: 11:     limpa_lcd();
+[e ( _limpa_lcd ..  ]
+"12
+[; ;statemachine.c: 12:     if(player1Pressed && player2Pressed) {
+[e $ ! && != _player1Pressed -> 0 `i != _player2Pressed -> 0 `i 370  ]
+{
 "13
-[; ;main.c: 13: void putch(char data)
-[v _data `uc ~T0 @X0 1 r1 ]
+[; ;statemachine.c: 13:         printf("P1: %.2f s",player1Time);
+[e ( _printf , (. :s 1C -> _player1Time `d ]
 "14
-[; ;main.c: 14: {
-[f ]
+[; ;statemachine.c: 14:         caracter_inicio(2,0);
+[e ( _caracter_inicio (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "15
-[; ;main.c: 15:     escreve_lcd(data);
-[e ( _escreve_lcd (1 _data ]
+[; ;statemachine.c: 15:         printf("P2: %.2f s", player2Time);
+[e ( _printf , (. :s 2C -> _player2Time `d ]
 "16
-[; ;main.c: 16: }
-[e :UE 369 ]
+[; ;statemachine.c: 16:     }else if(player1Pressed && !player2Pressed) {
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
+[e $U 371  ]
+[e :U 370 ]
+[e $ ! && != _player1Pressed -> 0 `i ! != _player2Pressed -> 0 `i 372  ]
+{
+"17
+[; ;statemachine.c: 17:         printf("P1: %.2f s",player1Time);
+[e ( _printf , (. :s 3C -> _player1Time `d ]
 "18
-[; ;main.c: 18: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+[; ;statemachine.c: 18:         caracter_inicio(2,0);
+[e ( _caracter_inicio (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "19
-[; ;main.c: 19: {
-{
-[e :U _main ]
-[f ]
+[; ;statemachine.c: 19:         printf("P2: - s");
+[e ( _printf :s 4C ]
 "20
-[; ;main.c: 20:     setup();
-[e ( _setup ..  ]
-"21
-[; ;main.c: 21:     reset();
-[e ( _reset ..  ]
-"22
-[; ;main.c: 22:     while (1) stateMachine();
-[e :U 372 ]
-[e ( _stateMachine ..  ]
-[e :U 371 ]
-[e $U 372  ]
-[e :U 373 ]
-"23
-[; ;main.c: 23: }
-[e :UE 370 ]
+[; ;statemachine.c: 20:     }else if(!player1Pressed && player2Pressed) {
 }
-[v $root$_isr `(v ~T0 @X0 0 e ]
+[e $U 373  ]
+[e :U 372 ]
+[e $ ! && ! != _player1Pressed -> 0 `i != _player2Pressed -> 0 `i 374  ]
+{
+"21
+[; ;statemachine.c: 21:         printf("P1: - s");
+[e ( _printf :s 5C ]
+"22
+[; ;statemachine.c: 22:         caracter_inicio(2,0);
+[e ( _caracter_inicio (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
+"23
+[; ;statemachine.c: 23:         printf("P2: %.2f s", player2Time);
+[e ( _printf , (. :s 6C -> _player2Time `d ]
+"24
+[; ;statemachine.c: 24:     }else {
+}
+[e $U 375  ]
+[e :U 374 ]
+{
 "25
-[; ;main.c: 25: void __attribute__((picinterrupt(("high_priority")))) isr(void)
-[v _isr `(v ~T36 @X0 1 ef ]
+[; ;statemachine.c: 25:         printf("P1: - s");
+[e ( _printf :s 7C ]
 "26
-[; ;main.c: 26: {
-{
-[e :U _isr ]
-[f ]
+[; ;statemachine.c: 26:         caracter_inicio(2,0);
+[e ( _caracter_inicio (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
 "27
-[; ;main.c: 27:     if(INTCONbits.INT0IF){
-[e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 375  ]
-{
+[; ;statemachine.c: 27:         printf("P2: - s");
+[e ( _printf :s 8C ]
 "28
-[; ;main.c: 28:         currentState = 0xf05;
-[e = _currentState -> 3845 `i ]
-"29
-[; ;main.c: 29:         INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"30
-[; ;main.c: 30:     }
+[; ;statemachine.c: 28:     }
 }
 [e :U 375 ]
+[e :U 373 ]
+[e :U 371 ]
+"29
+[; ;statemachine.c: 29: }
+[e :UE 369 ]
+}
+"31
+[; ;statemachine.c: 31: void reset(){
+[v _reset `(v ~T0 @X0 1 ef ]
+{
+[e :U _reset ]
+[f ]
 "32
-[; ;main.c: 32:     if(INTCON3bits.INT1IF){
-[e $ ! != -> . . _INTCON3bits 0 0 `i -> 0 `i 376  ]
-{
+[; ;statemachine.c: 32:     gameStatus = 0;
+[e = _gameStatus -> 0 `i ]
 "33
-[; ;main.c: 33:         currentState = 0xf06;
-[e = _currentState -> 3846 `i ]
+[; ;statemachine.c: 33:     currentTime = 0;
+[e = _currentTime -> 0 `i ]
 "34
-[; ;main.c: 34:         INTCON3bits.INT1IF = 0;
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-"35
-[; ;main.c: 35:     }
-}
-[e :U 376 ]
+[; ;statemachine.c: 34:     firstPlayer = 0;
+[e = _firstPlayer -> 0 `i ]
+"36
+[; ;statemachine.c: 36:     player1Time = 0;
+[e = _player1Time -> -> 0 `i `f ]
 "37
-[; ;main.c: 37:     if(INTCON3bits.INT2IF){
-[e $ ! != -> . . _INTCON3bits 0 1 `i -> 0 `i 377  ]
-{
-"38
-[; ;main.c: 38:         currentState = 0xf07;
-[e = _currentState -> 3847 `i ]
+[; ;statemachine.c: 37:     player2Time = 0;
+[e = _player2Time -> -> 0 `i `f ]
 "39
-[; ;main.c: 39:         INTCON3bits.INT2IF = 0;
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+[; ;statemachine.c: 39:     player1Pressed = 0;
+[e = _player1Pressed -> 0 `i ]
 "40
-[; ;main.c: 40:     }
-}
-[e :U 377 ]
+[; ;statemachine.c: 40:     player2Pressed = 0;
+[e = _player2Pressed -> 0 `i ]
 "42
-[; ;main.c: 42:     if(TMR2IF){
-[e $ ! _TMR2IF 378  ]
-{
+[; ;statemachine.c: 42:     PORTCbits.RC0 = 0;
+[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
 "43
-[; ;main.c: 43:         currentTime++;
-[e ++ _currentTime -> 1 `i ]
-"44
-[; ;main.c: 44:         TMR2IF = 0;
-[e = _TMR2IF -> -> 0 `i `b ]
+[; ;statemachine.c: 43:     PORTCbits.RC1 = 0;
+[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
 "45
-[; ;main.c: 45:     }
+[; ;statemachine.c: 45:     currentState = 0xf01;
+[e = _currentState -> 3841 `i ]
+"47
+[; ;statemachine.c: 47:     limpa_lcd();
+[e ( _limpa_lcd ..  ]
+"48
+[; ;statemachine.c: 48:     printf("IDLE...");
+[e ( _printf :s 9C ]
+"49
+[; ;statemachine.c: 49: }
+[e :UE 376 ]
 }
+"51
+[; ;statemachine.c: 51: void stateMachine(){
+[v _stateMachine `(v ~T0 @X0 1 ef ]
+{
+[e :U _stateMachine ]
+[f ]
+"52
+[; ;statemachine.c: 52:     switch(currentState){
+[e $U 379  ]
+{
+"53
+[; ;statemachine.c: 53:         case 0xf01: {
+[e :U 380 ]
+{
+"54
+[; ;statemachine.c: 54:             break;
+[e $U 378  ]
+"55
+[; ;statemachine.c: 55:         }
+}
+"56
+[; ;statemachine.c: 56:         case 0xf03: {
+[e :U 381 ]
+{
+"57
+[; ;statemachine.c: 57:             if(player1Pressed && player2Pressed) gameStatus = 0;
+[e $ ! && != _player1Pressed -> 0 `i != _player2Pressed -> 0 `i 382  ]
+[e = _gameStatus -> 0 `i ]
+[e :U 382 ]
+"58
+[; ;statemachine.c: 58:             break;
+[e $U 378  ]
+"59
+[; ;statemachine.c: 59:         }
+}
+"60
+[; ;statemachine.c: 60:         case 0xf02: {
+[e :U 383 ]
+{
+"61
+[; ;statemachine.c: 61:             PORTDbits.RD2 = 1;
+[e = . . _PORTDbits 0 2 -> -> 1 `i `uc ]
+"62
+[; ;statemachine.c: 62:             _delay((unsigned long)((500)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"63
+[; ;statemachine.c: 63:             PORTDbits.RD2 = 0;
+[e = . . _PORTDbits 0 2 -> -> 0 `i `uc ]
+"65
+[; ;statemachine.c: 65:             currentState = 0xf03;
+[e = _currentState -> 3843 `i ]
+"67
+[; ;statemachine.c: 67:             limpa_lcd();
+[e ( _limpa_lcd ..  ]
+"68
+[; ;statemachine.c: 68:             printf("WAITING...");
+[e ( _printf :s 10C ]
+"69
+[; ;statemachine.c: 69:             gameStatus = 1;
+[e = _gameStatus -> 1 `i ]
+"70
+[; ;statemachine.c: 70:             currentTime = 0;
+[e = _currentTime -> 0 `i ]
+"71
+[; ;statemachine.c: 71:             break;
+[e $U 378  ]
+"72
+[; ;statemachine.c: 72:         }
+}
+"73
+[; ;statemachine.c: 73:         case 0xf04: {
+[e :U 384 ]
+{
+"74
+[; ;statemachine.c: 74:             reset();
+[e ( _reset ..  ]
+"75
+[; ;statemachine.c: 75:             break;
+[e $U 378  ]
+"76
+[; ;statemachine.c: 76:         }
+}
+"77
+[; ;statemachine.c: 77:         case 0xf07: {
+[e :U 385 ]
+{
+"78
+[; ;statemachine.c: 78:             if((gameStatus) && (player1Pressed) && (player2Pressed)){
+[e $ ! && && != _gameStatus -> 0 `i != _player1Pressed -> 0 `i != _player2Pressed -> 0 `i 386  ]
+{
+"79
+[; ;statemachine.c: 79:                 currentState = 0xf04;
+[e = _currentState -> 3844 `i ]
+"80
+[; ;statemachine.c: 80:             }else if(!gameStatus) {
+}
+[e $U 387  ]
+[e :U 386 ]
+[e $ ! ! != _gameStatus -> 0 `i 388  ]
+{
+"81
+[; ;statemachine.c: 81:                 currentState = 0xf02;
+[e = _currentState -> 3842 `i ]
+"82
+[; ;statemachine.c: 82:             }
+}
+[e $U 389  ]
+"83
+[; ;statemachine.c: 83:             else {
+[e :U 388 ]
+{
+"84
+[; ;statemachine.c: 84:                 currentState = 0xf03;
+[e = _currentState -> 3843 `i ]
+"85
+[; ;statemachine.c: 85:             }
+}
+[e :U 389 ]
+[e :U 387 ]
+"86
+[; ;statemachine.c: 86:             break;
+[e $U 378  ]
+"87
+[; ;statemachine.c: 87:         }
+}
+"88
+[; ;statemachine.c: 88:         case 0xf05: {
+[e :U 390 ]
+{
+"89
+[; ;statemachine.c: 89:             if(gameStatus){
+[e $ ! != _gameStatus -> 0 `i 391  ]
+{
+"90
+[; ;statemachine.c: 90:                 if(!player1Pressed){
+[e $ ! ! != _player1Pressed -> 0 `i 392  ]
+{
+"91
+[; ;statemachine.c: 91:                     player1Time = (float)currentTime/100.0;
+[e = _player1Time -> / -> -> _currentTime `f `d .100.0 `f ]
+"93
+[; ;statemachine.c: 93:                     if(!player2Pressed) {
+[e $ ! ! != _player2Pressed -> 0 `i 393  ]
+{
+"94
+[; ;statemachine.c: 94:                         firstPlayer = 0xd01;
+[e = _firstPlayer -> 3329 `i ]
+"95
+[; ;statemachine.c: 95:                         PORTCbits.RC0 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+"96
+[; ;statemachine.c: 96:                     }
+}
+[e :U 393 ]
+"98
+[; ;statemachine.c: 98:                     player1Pressed = 1;
+[e = _player1Pressed -> 1 `i ]
+"99
+[; ;statemachine.c: 99:                     displayPlayers();
+[e ( _displayPlayers ..  ]
+"100
+[; ;statemachine.c: 100:                 }
+}
+[e :U 392 ]
+"101
+[; ;statemachine.c: 101:             }
+}
+[e :U 391 ]
+"102
+[; ;statemachine.c: 102:             break;
+[e $U 378  ]
+"103
+[; ;statemachine.c: 103:         }
+}
+"104
+[; ;statemachine.c: 104:         case 0xf06: {
+[e :U 394 ]
+{
+"105
+[; ;statemachine.c: 105:             if(gameStatus){
+[e $ ! != _gameStatus -> 0 `i 395  ]
+{
+"106
+[; ;statemachine.c: 106:                 if(!player2Pressed){
+[e $ ! ! != _player2Pressed -> 0 `i 396  ]
+{
+"107
+[; ;statemachine.c: 107:                     player2Time = (float)currentTime/100.0;
+[e = _player2Time -> / -> -> _currentTime `f `d .100.0 `f ]
+"109
+[; ;statemachine.c: 109:                     if(!player1Pressed) {
+[e $ ! ! != _player1Pressed -> 0 `i 397  ]
+{
+"110
+[; ;statemachine.c: 110:                         firstPlayer = 0xd02;
+[e = _firstPlayer -> 3330 `i ]
+"111
+[; ;statemachine.c: 111:                         PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"112
+[; ;statemachine.c: 112:                     }
+}
+[e :U 397 ]
+"114
+[; ;statemachine.c: 114:                     player2Pressed = 1;
+[e = _player2Pressed -> 1 `i ]
+"115
+[; ;statemachine.c: 115:                     displayPlayers();
+[e ( _displayPlayers ..  ]
+"116
+[; ;statemachine.c: 116:                 }
+}
+[e :U 396 ]
+"117
+[; ;statemachine.c: 117:             }
+}
+[e :U 395 ]
+"118
+[; ;statemachine.c: 118:             break;
+[e $U 378  ]
+"119
+[; ;statemachine.c: 119:         }
+}
+"120
+[; ;statemachine.c: 120:         default: {
+[e :U 398 ]
+{
+"121
+[; ;statemachine.c: 121:             break;
+[e $U 378  ]
+"122
+[; ;statemachine.c: 122:         }
+}
+"123
+[; ;statemachine.c: 123:     }
+}
+[e $U 378  ]
+[e :U 379 ]
+[e [\ _currentState , $ -> 3841 `i 380
+ , $ -> 3843 `i 381
+ , $ -> 3842 `i 383
+ , $ -> 3844 `i 384
+ , $ -> 3847 `i 385
+ , $ -> 3845 `i 390
+ , $ -> 3846 `i 394
+ 398 ]
 [e :U 378 ]
-"46
-[; ;main.c: 46: }
-[e :UE 374 ]
+"124
+[; ;statemachine.c: 124: }
+[e :UE 377 ]
 }
+[p f _printf 8462336 ]
+[a 2C 80 50 58 32 37 46 50 102 32 115 0 ]
+[a 6C 80 50 58 32 37 46 50 102 32 115 0 ]
+[a 1C 80 49 58 32 37 46 50 102 32 115 0 ]
+[a 3C 80 49 58 32 37 46 50 102 32 115 0 ]
+[a 4C 80 50 58 32 45 32 115 0 ]
+[a 8C 80 50 58 32 45 32 115 0 ]
+[a 5C 80 49 58 32 45 32 115 0 ]
+[a 7C 80 49 58 32 45 32 115 0 ]
+[a 10C 87 65 73 84 73 78 71 46 46 46 0 ]
+[a 9C 73 68 76 69 46 46 46 0 ]

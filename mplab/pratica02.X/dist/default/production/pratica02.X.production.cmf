@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\junho\AppData\Local\Temp\sli4.o
+$C:\Users\junho\AppData\Local\Temp\sbak.o
 idloc IDLOC 0 200000 200000 8 1
 init CODE 0 E E 4 1
 reset_vec CODE 0 0 0 4 1
@@ -115,22 +115,22 @@ MEDIUMCONST 3C2E-7FFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\pratica02.X.production.o
-8 intcode CODE >13976:C:\Users\junho\AppData\Local\Temp\sli4.s
-8 intcode CODE >141:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3752 intcode_body CODE >141:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3754 intcode_body CODE >143:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3762 intcode_body CODE >144:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-376C intcode_body CODE >145:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-376E intcode_body CODE >148:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-377C intcode_body CODE >149:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3786 intcode_body CODE >150:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3788 intcode_body CODE >153:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3796 intcode_body CODE >154:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-37A0 intcode_body CODE >155:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-37A2 intcode_body CODE >158:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-37B0 intcode_body CODE >159:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-37B6 intcode_body CODE >160:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-37B8 intcode_body CODE >162:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+8 intcode CODE >14317:C:\Users\junho\AppData\Local\Temp\sbak.s
+8 intcode CODE >25:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3752 intcode_body CODE >25:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3754 intcode_body CODE >27:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3762 intcode_body CODE >28:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+376C intcode_body CODE >29:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+376E intcode_body CODE >32:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+377C intcode_body CODE >33:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3786 intcode_body CODE >34:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3788 intcode_body CODE >37:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3796 intcode_body CODE >38:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+37A0 intcode_body CODE >39:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+37A2 intcode_body CODE >42:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+37B0 intcode_body CODE >43:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+37B6 intcode_body CODE >44:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+37B8 intcode_body CODE >46:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 3B90 text43 CODE >31:C:\Users\junho\git\micro\mplab\pratica02.X\pinconfig.c
 3B90 text43 CODE >33:C:\Users\junho\git\micro\mplab\pratica02.X\pinconfig.c
 3B92 text43 CODE >34:C:\Users\junho\git\micro\mplab\pratica02.X\pinconfig.c
@@ -700,9 +700,9 @@ $dist/default/production\pratica02.X.production.o
 29E0 text18 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\floorf.c
 29F0 text18 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\floorf.c
 3C16 text17 CODE >24:C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
-3C24 text16 CODE >12:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3C26 text16 CODE >14:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3C2C text16 CODE >15:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3C24 text16 CODE >13:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3C26 text16 CODE >15:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3C2C text16 CODE >16:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 3548 text15 CODE >8:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 3548 text15 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 356C text15 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
@@ -937,105 +937,105 @@ FD8 text8 CODE >442:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\c
 3AD6 text4 CODE >9:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 3AE0 text4 CODE >10:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 3AFC text4 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
-2D36 text3 CODE >17:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2D36 text3 CODE >18:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2D3A text3 CODE >19:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2D60 text3 CODE >20:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2D7C text3 CODE >21:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2D86 text3 CODE >22:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2DA4 text3 CODE >23:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2DCC text3 CODE >24:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2DE8 text3 CODE >25:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2DF2 text3 CODE >26:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E00 text3 CODE >27:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E28 text3 CODE >28:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E34 text3 CODE >29:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E3E text3 CODE >30:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E5C text3 CODE >31:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E60 text3 CODE >32:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E6C text3 CODE >33:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E76 text3 CODE >34:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2E84 text3 CODE >36:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-36E8 text2 CODE >38:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-36E8 text2 CODE >39:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-36F2 text2 CODE >40:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-36FA text2 CODE >41:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3702 text2 CODE >43:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3712 text2 CODE >44:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3722 text2 CODE >46:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-372A text2 CODE >47:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3732 text2 CODE >49:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3734 text2 CODE >50:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3736 text2 CODE >52:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-373E text2 CODE >54:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3742 text2 CODE >55:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3750 text2 CODE >56:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2558 text1 CODE >58:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2558 text1 CODE >59:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-255C text1 CODE >64:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-258C text1 CODE >67:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-258C text1 CODE >68:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-258E text1 CODE >69:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25A8 text1 CODE >70:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25AA text1 CODE >72:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25B4 text1 CODE >74:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25B8 text1 CODE >75:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25C6 text1 CODE >76:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25D0 text1 CODE >77:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25D8 text1 CODE >78:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25DC text1 CODE >81:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25E0 text1 CODE >82:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-25E4 text1 CODE >85:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-261A text1 CODE >86:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2622 text1 CODE >87:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2638 text1 CODE >88:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2640 text1 CODE >89:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2644 text1 CODE >91:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2650 text1 CODE >96:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2662 text1 CODE >97:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2674 text1 CODE >98:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-26C0 text1 CODE >100:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-26D4 text1 CODE >101:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-26DC text1 CODE >102:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-26DE text1 CODE >103:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-26DE text1 CODE >105:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-26E6 text1 CODE >106:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-26EE text1 CODE >112:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2700 text1 CODE >113:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2712 text1 CODE >114:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-275E text1 CODE >116:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2772 text1 CODE >117:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-277A text1 CODE >118:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-277C text1 CODE >119:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-277C text1 CODE >121:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-2788 text1 CODE >130:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-27DE text1 CODE >131:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3C02 text0 CODE >134:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3C02 text0 CODE >136:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3C06 text0 CODE >137:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3C0A text0 CODE >138:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
-3AFE cinit CODE >1427:C:\Users\junho\AppData\Local\Temp\sli4.s
-3AFE cinit CODE >1429:C:\Users\junho\AppData\Local\Temp\sli4.s
-3AFE cinit CODE >1432:C:\Users\junho\AppData\Local\Temp\sli4.s
-3AFE cinit CODE >1482:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B02 cinit CODE >1483:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B04 cinit CODE >1484:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B04 cinit CODE >1485:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B06 cinit CODE >1486:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B08 cinit CODE >1487:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B0A cinit CODE >1490:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B0E cinit CODE >1491:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B10 cinit CODE >1492:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B10 cinit CODE >1493:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B12 cinit CODE >1494:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B14 cinit CODE >1495:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B16 cinit CODE >1501:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B16 cinit CODE >1503:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B18 cinit CODE >1504:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B1A cinit CODE >1506:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B1C cinit CODE >1507:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B1E cinit CODE >1508:C:\Users\junho\AppData\Local\Temp\sli4.s
-3B20 cinit CODE >1509:C:\Users\junho\AppData\Local\Temp\sli4.s
+2D36 text3 CODE >10:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2D36 text3 CODE >11:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2D3A text3 CODE >12:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2D60 text3 CODE >13:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2D7C text3 CODE >14:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2D86 text3 CODE >15:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2DA4 text3 CODE >16:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2DCC text3 CODE >17:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2DE8 text3 CODE >18:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2DF2 text3 CODE >19:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E00 text3 CODE >20:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E28 text3 CODE >21:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E34 text3 CODE >22:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E3E text3 CODE >23:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E5C text3 CODE >24:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E60 text3 CODE >25:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E6C text3 CODE >26:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E76 text3 CODE >27:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2E84 text3 CODE >29:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+36E8 text2 CODE >31:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+36E8 text2 CODE >32:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+36F2 text2 CODE >33:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+36FA text2 CODE >34:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3702 text2 CODE >36:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3712 text2 CODE >37:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3722 text2 CODE >39:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+372A text2 CODE >40:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3732 text2 CODE >42:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3734 text2 CODE >43:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3736 text2 CODE >45:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+373E text2 CODE >47:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3742 text2 CODE >48:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3750 text2 CODE >49:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2558 text1 CODE >51:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2558 text1 CODE >52:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+255C text1 CODE >57:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+258C text1 CODE >60:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+258C text1 CODE >61:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+258E text1 CODE >62:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25A8 text1 CODE >63:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25AA text1 CODE >65:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25B4 text1 CODE >67:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25B8 text1 CODE >68:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25C6 text1 CODE >69:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25D0 text1 CODE >70:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25D8 text1 CODE >71:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25DC text1 CODE >74:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25E0 text1 CODE >75:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+25E4 text1 CODE >78:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+261A text1 CODE >79:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2622 text1 CODE >80:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2638 text1 CODE >81:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2640 text1 CODE >82:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2644 text1 CODE >84:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2650 text1 CODE >89:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2662 text1 CODE >90:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2674 text1 CODE >91:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+26C0 text1 CODE >93:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+26D4 text1 CODE >94:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+26DC text1 CODE >95:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+26DE text1 CODE >96:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+26DE text1 CODE >98:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+26E6 text1 CODE >99:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+26EE text1 CODE >105:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2700 text1 CODE >106:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2712 text1 CODE >107:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+275E text1 CODE >109:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2772 text1 CODE >110:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+277A text1 CODE >111:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+277C text1 CODE >112:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+277C text1 CODE >114:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+2788 text1 CODE >123:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+27DE text1 CODE >124:C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+3C02 text0 CODE >18:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3C02 text0 CODE >20:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3C06 text0 CODE >21:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3C0A text0 CODE >22:C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+3AFE cinit CODE >1767:C:\Users\junho\AppData\Local\Temp\sbak.s
+3AFE cinit CODE >1769:C:\Users\junho\AppData\Local\Temp\sbak.s
+3AFE cinit CODE >1772:C:\Users\junho\AppData\Local\Temp\sbak.s
+3AFE cinit CODE >1822:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B02 cinit CODE >1823:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B04 cinit CODE >1824:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B04 cinit CODE >1825:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B06 cinit CODE >1826:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B08 cinit CODE >1827:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B0A cinit CODE >1830:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B0E cinit CODE >1831:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B10 cinit CODE >1832:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B10 cinit CODE >1833:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B12 cinit CODE >1834:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B14 cinit CODE >1835:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B16 cinit CODE >1841:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B16 cinit CODE >1843:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B18 cinit CODE >1844:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B1A cinit CODE >1846:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B1C cinit CODE >1847:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B1E cinit CODE >1848:C:\Users\junho\AppData\Local\Temp\sbak.s
+3B20 cinit CODE >1849:C:\Users\junho\AppData\Local\Temp\sbak.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1061,7 +1061,7 @@ __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 strncmp@_l 1 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 strncmp@_r 3 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\pratica02.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\junho\AppData\Local\Temp\sli4.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\junho\AppData\Local\Temp\sbak.o
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\pratica02.X.production.o
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 __end_of_stateMachine 27E0 0 CODE 0 text1 dist/default/production\pratica02.X.production.o
@@ -1070,7 +1070,7 @@ __end_of_stateMachine 27E0 0 CODE 0 text1 dist/default/production\pratica02.X.pr
 __Lsmallconst 800 0 SMALLCONST 0 smallconst dist/default/production\pratica02.X.production.o
 _ADIE 7CEE 0 ABS 0 - dist/default/production\pratica02.X.production.o
 _PEIE 7F96 0 ABS 0 - dist/default/production\pratica02.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\junho\AppData\Local\Temp\sli4.o
+___sp 0 0 STACK 2 stack C:\Users\junho\AppData\Local\Temp\sbak.o
 _atoi 2BA6 0 CODE 0 text30 dist/default/production\pratica02.X.production.o
 _dbuf 100 0 BANK1 1 bssBANK1 dist/default/production\pratica02.X.production.o
 _main 3C02 0 CODE 0 text0 dist/default/production\pratica02.X.production.o
@@ -1080,7 +1080,7 @@ btemp 5E 0 COMRAM 1 temp dist/default/production\pratica02.X.production.o
 pad@i 1E 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 pad@p 1B 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 pad@w 20 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
-start E 0 CODE 0 init C:\Users\junho\AppData\Local\Temp\sli4.o
+start E 0 CODE 0 init C:\Users\junho\AppData\Local\Temp\sbak.o
 ___flmul@aexp 12 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 ___flmul@bexp 13 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 ___flmul@prod 14 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
@@ -1113,11 +1113,11 @@ ttemp5 5F 0 COMRAM 1 temp dist/default/production\pratica02.X.production.o
 ttemp6 62 0 COMRAM 1 temp dist/default/production\pratica02.X.production.o
 ttemp7 66 0 COMRAM 1 temp dist/default/production\pratica02.X.production.o
 __size_of_vfpfcnvrt 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\junho\AppData\Local\Temp\sli4.o
-intlevel0 0 0 CODE 0 text C:\Users\junho\AppData\Local\Temp\sli4.o
-intlevel1 0 0 CODE 0 text C:\Users\junho\AppData\Local\Temp\sli4.o
-intlevel2 0 0 CODE 0 text C:\Users\junho\AppData\Local\Temp\sli4.o
-intlevel3 0 0 CODE 0 text C:\Users\junho\AppData\Local\Temp\sli4.o
+__accesstop 60 0 ABS 0 - C:\Users\junho\AppData\Local\Temp\sbak.o
+intlevel0 0 0 CODE 0 text C:\Users\junho\AppData\Local\Temp\sbak.o
+intlevel1 0 0 CODE 0 text C:\Users\junho\AppData\Local\Temp\sbak.o
+intlevel2 0 0 CODE 0 text C:\Users\junho\AppData\Local\Temp\sbak.o
+intlevel3 0 0 CODE 0 text C:\Users\junho\AppData\Local\Temp\sbak.o
 floorf@e 36 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 floorf@m 32 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 floorf@u 38 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
@@ -1138,11 +1138,11 @@ ___awdiv@sign 6 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.prod
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\pratica02.X.production.o
 _vfpfcnvrt 190C 0 CODE 0 text6 dist/default/production\pratica02.X.production.o
 ___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
-_vfpfcnvrt$834 52 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
-_vfpfcnvrt$838 54 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
+_vfpfcnvrt$842 52 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
+_vfpfcnvrt$846 54 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 ___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\junho\AppData\Local\Temp\sli4.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\junho\AppData\Local\Temp\sli4.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\junho\AppData\Local\Temp\sbak.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\junho\AppData\Local\Temp\sbak.o
 ?_tolower 7 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\pratica02.X.production.o
 __end_of___fleq 3548 0 CODE 0 text26 dist/default/production\pratica02.X.production.o
@@ -1156,9 +1156,9 @@ ___fldiv@bexp 26 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.pro
 ___fldiv@sign 1F 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\pratica02.X.production.o
 ?_printf A0 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
-_atoi$1309 10 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
-_atoi$1310 14 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
-_atoi$1311 12 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
+_atoi$1317 10 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
+_atoi$1318 14 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
+_atoi$1319 12 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 __Hintcodelo E 0 CODE 0 intcodelo dist/default/production\pratica02.X.production.o
 ___awdiv@divisor 3 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 __end_of___awdiv 33EE 0 CODE 0 text29 dist/default/production\pratica02.X.production.o
@@ -1214,7 +1214,7 @@ efgtoa@p 7C 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production
 efgtoa@t 70 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
 efgtoa@u 94 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
 efgtoa@w 7F 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
-_tolower$1414 D 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
+_tolower$1422 D 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 __size_of_escreve_lcd 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\pratica02.X.production.o
 efgtoa@mode 81 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
@@ -1225,12 +1225,12 @@ __pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.prod
 _TMR2IE 7CE9 0 ABS 0 - dist/default/production\pratica02.X.production.o
 _TMR2IF 7CF1 0 ABS 0 - dist/default/production\pratica02.X.production.o
 __end_of_printf 3AFE 0 CODE 0 text4 dist/default/production\pratica02.X.production.o
-_efgtoa$808 64 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
-_efgtoa$809 66 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
-_efgtoa$814 68 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
-_efgtoa$818 6A 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
-_efgtoa$819 6C 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
-_efgtoa$820 6E 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
+_efgtoa$816 64 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
+_efgtoa$817 66 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
+_efgtoa$822 68 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
+_efgtoa$826 6A 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
+_efgtoa$827 6C 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
+_efgtoa$828 6E 0 BANK0 1 cstackBANK0 dist/default/production\pratica02.X.production.o
 fputc@fp 9 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 fputs@fp 12 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 __Hbank0 0 0 ABS 0 bank0 dist/default/production\pratica02.X.production.o
@@ -1265,7 +1265,7 @@ __size_of___xxtofl 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 _currentTime CC 0 BANK0 1 bssBANK0 dist/default/production\pratica02.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\pratica02.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\pratica02.X.production.o
-__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\junho\AppData\Local\Temp\sli4.o
+__smallconst 800 0 SMALLCONST 0 smallconst C:\Users\junho\AppData\Local\Temp\sbak.o
 ___xxtofl@arg B 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 ___xxtofl@exp A 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 ___xxtofl@val 1 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
@@ -1485,8 +1485,8 @@ ___fldiv@new_exp 20 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.
 _escreve_lcd 3C16 0 CODE 0 text17 dist/default/production\pratica02.X.production.o
 __size_of_vfprintf 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 __CFG_CCP2MX$ON 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
-stackhi 7FF 0 ABS 0 - C:\Users\junho\AppData\Local\Temp\sli4.o
-stacklo 150 0 ABS 0 - C:\Users\junho\AppData\Local\Temp\sli4.o
+stackhi 7FF 0 ABS 0 - C:\Users\junho\AppData\Local\Temp\sbak.o
+stacklo 150 0 ABS 0 - C:\Users\junho\AppData\Local\Temp\sbak.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\pratica02.X.production.o
 __Lintret 0 0 ABS 0 intret dist/default/production\pratica02.X.production.o
 tolower@c 7 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
@@ -1593,7 +1593,7 @@ __Ltext40 0 0 ABS 0 text40 dist/default/production\pratica02.X.production.o
 __Ltext41 0 0 ABS 0 text41 dist/default/production\pratica02.X.production.o
 __Ltext42 0 0 ABS 0 text42 dist/default/production\pratica02.X.production.o
 __Ltext43 0 0 ABS 0 text43 dist/default/production\pratica02.X.production.o
-__ramtop 800 0 RAM 0 ramtop C:\Users\junho\AppData\Local\Temp\sli4.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\junho\AppData\Local\Temp\sbak.o
 _player1Time B8 0 BANK0 1 bssBANK0 dist/default/production\pratica02.X.production.o
 _player2Time B4 0 BANK0 1 bssBANK0 dist/default/production\pratica02.X.production.o
 _vfprintf 37BC 0 CODE 0 text5 dist/default/production\pratica02.X.production.o
@@ -1632,7 +1632,7 @@ __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 __size_of_configureIRQ 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\pratica02.X.production.o
-_isspace$1340 7 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
+_isspace$1348 7 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 envia_byte_lcd@endereco 4 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o
 __CFG_PWRT$OFF 0 0 ABS 0 - dist/default/production\pratica02.X.production.o
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\pratica02.X.production.o

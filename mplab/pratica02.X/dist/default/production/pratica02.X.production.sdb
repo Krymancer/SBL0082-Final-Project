@@ -87,17 +87,11 @@
 [v _inicializa_lcd inicializa_lcd `(v  1 e 1 0 ]
 "59
 [v _caracter_inicio caracter_inicio `(v  1 e 1 0 ]
-"12 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"13 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _putch putch `(v  1 e 1 0 ]
-"17
-[v _displayPlayers displayPlayers `(v  1 e 1 0 ]
-"38
-[v _reset reset `(v  1 e 1 0 ]
-"58
-[v _stateMachine stateMachine `(v  1 e 1 0 ]
-"134
+"18
 [v _main main `(v  1 e 1 0 ]
-"141
+"25
 [v _isr isr `IIH(v  1 e 1 0 ]
 "5 C:\Users\junho\git\micro\mplab\pratica02.X\pinconfig.c
 [v _configurePins configurePins `(v  1 e 1 0 ]
@@ -107,6 +101,12 @@
 [v _initTimer initTimer `(v  1 e 1 0 ]
 "72
 [v _setup setup `(v  1 e 1 0 ]
+"10 C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
+[v _displayPlayers displayPlayers `(v  1 e 1 0 ]
+"31
+[v _reset reset `(v  1 e 1 0 ]
+"51
+[v _stateMachine stateMachine `(v  1 e 1 0 ]
 "19 C:\Users\junho\git\micro\mplab\pratica02.X/globalscope.h
 [v _currentState currentState `i  1 e 2 0 ]
 "21
@@ -123,7 +123,7 @@
 [v _player2Time player2Time `f  1 e 4 0 ]
 "31
 [v _gameStatus gameStatus `i  1 e 2 0 ]
-[s S45 . 1 `uc 1 RC0 1 0 :1:0 
+[s S454 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -133,30 +133,30 @@
 `uc 1 RC7 1 0 :1:7 
 ]
 "2605 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic18f4550.h
-[s S54 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S463 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S61 . 1 `uc 1 T13CKI 1 0 :1:0 
+[s S470 . 1 `uc 1 T13CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S68 . 1 `uc 1 . 1 0 :1:0 
+[s S477 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[s S72 . 1 `uc 1 . 1 0 :1:0 
+[s S481 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 ]
-[u S75 . 1 `S45 1 . 1 0 `S54 1 . 1 0 `S61 1 . 1 0 `S68 1 . 1 0 `S72 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES75  1 e 1 @3970 ]
-[s S112 . 1 `uc 1 RD0 1 0 :1:0 
+[u S484 . 1 `S454 1 . 1 0 `S463 1 . 1 0 `S470 1 . 1 0 `S477 1 . 1 0 `S481 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES484  1 e 1 @3970 ]
+[s S168 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -166,7 +166,7 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "2736
-[s S121 . 1 `uc 1 SPP0 1 0 :1:0 
+[s S177 . 1 `uc 1 SPP0 1 0 :1:0 
 `uc 1 SPP1 1 0 :1:1 
 `uc 1 SPP2 1 0 :1:2 
 `uc 1 SPP3 1 0 :1:3 
@@ -175,12 +175,12 @@
 `uc 1 SPP6 1 0 :1:6 
 `uc 1 SPP7 1 0 :1:7 
 ]
-[s S130 . 1 `uc 1 . 1 0 :7:0 
+[s S186 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 SS2 1 0 :1:7 
 ]
-[u S133 . 1 `S112 1 . 1 0 `S121 1 . 1 0 `S130 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES133  1 e 1 @3971 ]
-[s S403 . 1 `uc 1 TRISB0 1 0 :1:0 
+[u S189 . 1 `S168 1 . 1 0 `S177 1 . 1 0 `S186 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES189  1 e 1 @3971 ]
+[s S277 . 1 `uc 1 TRISB0 1 0 :1:0 
 `uc 1 TRISB1 1 0 :1:1 
 `uc 1 TRISB2 1 0 :1:2 
 `uc 1 TRISB3 1 0 :1:3 
@@ -190,7 +190,7 @@
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "3657
-[s S412 . 1 `uc 1 RB0 1 0 :1:0 
+[s S286 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -199,9 +199,9 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-[u S421 . 1 `S403 1 . 1 0 `S412 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES421  1 e 1 @3987 ]
-[s S371 . 1 `uc 1 TRISC0 1 0 :1:0 
+[u S295 . 1 `S277 1 . 1 0 `S286 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES295  1 e 1 @3987 ]
+[s S245 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
@@ -209,16 +209,16 @@
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "3875
-[s S378 . 1 `uc 1 RC0 1 0 :1:0 
+[s S252 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 . 1 0 :3:3 
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S385 . 1 `S371 1 . 1 0 `S378 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES385  1 e 1 @3988 ]
-[s S443 . 1 `uc 1 TRISD0 1 0 :1:0 
+[u S259 . 1 `S245 1 . 1 0 `S252 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES259  1 e 1 @3988 ]
+[s S317 . 1 `uc 1 TRISD0 1 0 :1:0 
 `uc 1 TRISD1 1 0 :1:1 
 `uc 1 TRISD2 1 0 :1:2 
 `uc 1 TRISD3 1 0 :1:3 
@@ -228,14 +228,14 @@
 `uc 1 TRISD7 1 0 :1:7 
 ]
 "4033
-[u S461 . 1 `S443 1 . 1 0 `S112 1 . 1 0 ]
-[v _TRISDbits TRISDbits `VES461  1 e 1 @3989 ]
-[s S536 . 1 `uc 1 T2CKPS 1 0 :2:0 
+[u S335 . 1 `S317 1 . 1 0 `S168 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES335  1 e 1 @3989 ]
+[s S410 . 1 `uc 1 T2CKPS 1 0 :2:0 
 `uc 1 TMR2ON 1 0 :1:2 
 `uc 1 TOUTPS 1 0 :4:3 
 ]
 "7228
-[s S540 . 1 `uc 1 T2CKPS0 1 0 :1:0 
+[s S414 . 1 `uc 1 T2CKPS0 1 0 :1:0 
 `uc 1 T2CKPS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 T2OUTPS0 1 0 :1:3 
@@ -243,19 +243,19 @@
 `uc 1 T2OUTPS2 1 0 :1:5 
 `uc 1 T2OUTPS3 1 0 :1:6 
 ]
-[s S548 . 1 `uc 1 . 1 0 :3:0 
+[s S422 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 TOUTPS0 1 0 :1:3 
 `uc 1 TOUTPS1 1 0 :1:4 
 `uc 1 TOUTPS2 1 0 :1:5 
 `uc 1 TOUTPS3 1 0 :1:6 
 ]
-[u S554 . 1 `S536 1 . 1 0 `S540 1 . 1 0 `S548 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES554  1 e 1 @4042 ]
+[u S428 . 1 `S410 1 . 1 0 `S414 1 . 1 0 `S422 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES428  1 e 1 @4042 ]
 "7298
 [v _PR2 PR2 `VEuc  1 e 1 @4043 ]
 "8413
 [v _INTCON3 INTCON3 `VEuc  1 e 1 @4080 ]
-[s S218 . 1 `uc 1 INT1IF 1 0 :1:0 
+[s S91 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 INT2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1IE 1 0 :1:3 
@@ -265,7 +265,7 @@
 `uc 1 INT2IP 1 0 :1:7 
 ]
 "8440
-[s S227 . 1 `uc 1 INT1F 1 0 :1:0 
+[s S100 . 1 `uc 1 INT1F 1 0 :1:0 
 `uc 1 INT2F 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1E 1 0 :1:3 
@@ -274,11 +274,11 @@
 `uc 1 INT1P 1 0 :1:6 
 `uc 1 INT2P 1 0 :1:7 
 ]
-[u S236 . 1 `S218 1 . 1 0 `S227 1 . 1 0 ]
-[v _INTCON3bits INTCON3bits `VES236  1 e 1 @4080 ]
+[u S109 . 1 `S91 1 . 1 0 `S100 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES109  1 e 1 @4080 ]
 "8505
 [v _INTCON2 INTCON2 `VEuc  1 e 1 @4081 ]
-[s S169 . 1 `uc 1 RBIF 1 0 :1:0 
+[s S42 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -288,7 +288,7 @@
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "8614
-[s S178 . 1 `uc 1 . 1 0 :1:0 
+[s S51 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -297,12 +297,12 @@
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S187 . 1 `uc 1 . 1 0 :6:0 
+[s S60 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S191 . 1 `S169 1 . 1 0 `S178 1 . 1 0 `S187 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES191  1 e 1 @4082 ]
+[u S64 . 1 `S42 1 . 1 0 `S51 1 . 1 0 `S60 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES64  1 e 1 @4082 ]
 "8973
 [v _ADIE ADIE `VEb  1 e 0 @31982 ]
 "10269
@@ -319,25 +319,25 @@
 [v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"134 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"18 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"139
+"23
 } 0
-"58
+"51 C:\Users\junho\git\micro\mplab\pratica02.X\statemachine.c
 [v _stateMachine stateMachine `(v  1 e 1 0 ]
 {
-"131
+"124
 } 0
-"38
+"31
 [v _reset reset `(v  1 e 1 0 ]
 {
-"56
+"49
 } 0
-"17
+"10
 [v _displayPlayers displayPlayers `(v  1 e 1 0 ]
 {
-"36
+"29
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
@@ -353,9 +353,9 @@
 {
 "1371
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 62 ]
-[s S709 _IO_FILE 0 ]
+[s S717 _IO_FILE 0 ]
 "1368
-[v vfprintf@fp fp `*.2S709  1 p 2 56 ]
+[v vfprintf@fp fp `*.2S717  1 p 2 56 ]
 [v vfprintf@fmt fmt `*.25Cuc  1 p 2 58 ]
 [v vfprintf@ap ap `*.39*.39v  1 p 2 60 ]
 "1382
@@ -368,9 +368,9 @@
 "672
 [v vfpfcnvrt@ct ct `[3]uc  1 a 3 89 ]
 [v vfpfcnvrt@c c `uc  1 a 1 92 ]
-[s S709 _IO_FILE 0 ]
+[s S717 _IO_FILE 0 ]
 "670
-[v vfpfcnvrt@fp fp `*.2S709  1 p 2 71 ]
+[v vfpfcnvrt@fp fp `*.2S717  1 p 2 71 ]
 [v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 73 ]
 [v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 75 ]
 "1365
@@ -411,9 +411,9 @@
 "321
 [v efgtoa@mode mode `uc  1 a 1 33 ]
 [v efgtoa@nmode nmode `uc  1 a 1 30 ]
-[s S709 _IO_FILE 0 ]
+[s S717 _IO_FILE 0 ]
 "319
-[v efgtoa@fp fp `*.2S709  1 p 2 59 ]
+[v efgtoa@fp fp `*.2S717  1 p 2 59 ]
 [v efgtoa@f f `d  1 p 4 61 ]
 [v efgtoa@c c `uc  1 p 1 65 ]
 "503
@@ -448,9 +448,9 @@
 "74
 [v pad@w w `i  1 a 2 31 ]
 [v pad@i i `i  1 a 2 29 ]
-[s S709 _IO_FILE 0 ]
+[s S717 _IO_FILE 0 ]
 "72
-[v pad@fp fp `*.2S709  1 p 2 22 ]
+[v pad@fp fp `*.2S717  1 p 2 22 ]
 [v pad@buf buf `*.39uc  1 p 2 24 ]
 [v pad@p p `i  1 p 2 26 ]
 "95
@@ -473,26 +473,26 @@
 [v fputs@c c `uc  1 a 1 19 ]
 "8
 [v fputs@s s `*.39Cuc  1 p 2 15 ]
-[s S1353 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S1353  1 p 2 17 ]
+[s S1361 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputs@fp fp `*.2S1361  1 p 2 17 ]
 "19
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\nf_fputc.c
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 6 ]
-[s S1353 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S1353  1 p 2 8 ]
+[s S1361 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
+[v fputc@fp fp `*.2S1361  1 p 2 8 ]
 "21
 } 0
-"12 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"13 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _putch putch `(v  1 e 1 0 ]
 {
 [v putch@data data `uc  1 a 1 wreg ]
 [v putch@data data `uc  1 a 1 wreg ]
-"14
-[v putch@data data `uc  1 a 1 5 ]
 "15
+[v putch@data data `uc  1 a 1 5 ]
+"16
 } 0
 "24 C:\Users\junho\git\micro\mplab\pratica02.X\lcd.c
 [v _escreve_lcd escreve_lcd `T(v  1 e 1 0 ]
@@ -504,9 +504,9 @@
 "3 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\floorf.c
 [v _floorf floorf `(f  1 e 4 0 ]
 {
-[u S1287 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1295 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "5
-[v floorf@u u `S1287  1 a 4 55 ]
+[v floorf@u u `S1295  1 a 4 55 ]
 "7
 [v floorf@m m `ul  1 a 4 49 ]
 "6
@@ -514,21 +514,21 @@
 "3
 [v floorf@x x `f  1 p 4 39 ]
 "4
-[v floorf@F524 F524 `S1287  1 s 4 F524 ]
+[v floorf@F524 F524 `S1295  1 s 4 F524 ]
 "27
 } 0
 "4 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\__fpclassifyf.c
 [v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
 {
-[u S1287 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1295 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v ___fpclassifyf@u u `S1287  1 a 4 10 ]
+[v ___fpclassifyf@u u `S1295  1 a 4 10 ]
 "7
 [v ___fpclassifyf@e e `i  1 a 2 8 ]
 "4
 [v ___fpclassifyf@x x `f  1 p 4 0 ]
 "5
-[v ___fpclassifyf@F463 F463 `S1287  1 s 4 F463 ]
+[v ___fpclassifyf@F463 F463 `S1295  1 s 4 F463 ]
 "11
 } 0
 "43 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\fltol.c
@@ -573,17 +573,17 @@
 "8 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1152 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1160 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1157 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1160 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1152 1 fAsBytes 4 0 `S1157 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1160  1 a 4 19 ]
+[s S1165 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1168 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1160 1 fAsBytes 4 0 `S1165 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1168  1 a 4 19 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 13 ]
-[s S1228 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1236 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1231 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1228 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1231  1 a 2 23 ]
+[u S1239 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1236 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1239  1 a 2 23 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 18 ]
 "11
@@ -762,8 +762,8 @@
 {
 "52
 } 0
-"141 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
+"25 C:\Users\junho\git\micro\mplab\pratica02.X\main.c
 [v _isr isr `IIH(v  1 e 1 0 ]
 {
-"162
+"46
 } 0

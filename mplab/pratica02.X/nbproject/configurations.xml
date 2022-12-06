@@ -18,6 +18,8 @@
       <itemPath>pinconfig.h</itemPath>
       <itemPath>pinconfig.c</itemPath>
       <itemPath>globalscope.h</itemPath>
+      <itemPath>statemachine.c</itemPath>
+      <itemPath>statemachine.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

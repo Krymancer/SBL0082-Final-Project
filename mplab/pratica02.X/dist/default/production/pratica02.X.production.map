@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.10\pic\dat\en_msgs.txt \
   -cs -h+dist/default/production\pratica02.X.production.sym \
   --cmf=dist/default/production\pratica02.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\junho\AppData\Local\Temp\sli4.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\junho\AppData\Local\Temp\sbak.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/pratica02.X.production.map -E1 -ver=XC8 \
   --acfsm=1493 -ASTACK=0150h-07FFh -pstack=STACK -ACODE=00h-07FFFh \
   -ACONST=00h-07FFFh -ASMALLCONST=0800h-08FFhx120 \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\junho\AppData\Local\Temp\sli4.o \
+  C:\Users\junho\AppData\Local\Temp\sbak.o \
   dist/default/production\pratica02.X.production.o 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\junho\AppData\Local\Temp\sli4.o
+C:\Users\junho\AppData\Local\Temp\sbak.o
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
@@ -751,9 +751,9 @@ __size_of_vfpfcnvrt        (abs)        000000
 __size_of_vfprintf         (abs)        000000
 __smallconst               smallconst   000800
 _atoi                      text30       002BA6
-_atoi$1309                 cstackCOMRAM 000010
-_atoi$1310                 cstackCOMRAM 000014
-_atoi$1311                 cstackCOMRAM 000012
+_atoi$1317                 cstackCOMRAM 000010
+_atoi$1318                 cstackCOMRAM 000014
+_atoi$1319                 cstackCOMRAM 000012
 _caracter_inicio           text34       0039B6
 _configureIRQ              text43       003B90
 _configurePins             text42       003B6E
@@ -762,12 +762,12 @@ _currentTime               bssBANK0     0000CC
 _dbuf                      bssBANK1     000100
 _displayPlayers            text3        002D36
 _efgtoa                    text8        00084E
-_efgtoa$808                cstackBANK0  000064
-_efgtoa$809                cstackBANK0  000066
-_efgtoa$814                cstackBANK0  000068
-_efgtoa$818                cstackBANK0  00006A
-_efgtoa$819                cstackBANK0  00006C
-_efgtoa$820                cstackBANK0  00006E
+_efgtoa$816                cstackBANK0  000064
+_efgtoa$817                cstackBANK0  000066
+_efgtoa$822                cstackBANK0  000068
+_efgtoa$826                cstackBANK0  00006A
+_efgtoa$827                cstackBANK0  00006C
+_efgtoa$828                cstackBANK0  00006E
 _envia_byte_lcd            text40       003B4A
 _envia_nibble_lcd          text41       0035DE
 _escreve_lcd               text17       003C16
@@ -782,7 +782,7 @@ _initTimer                 text38       003BEA
 _isdigit                   text32       003A68
 _isr                       intcode      000008
 _isspace                   text31       0038DA
-_isspace$1340              cstackCOMRAM 000007
+_isspace$1348              cstackCOMRAM 000007
 _isupper                   text10       0039F8
 _limpa_lcd                 text37       003BD0
 _main                      text0        003C02
@@ -802,10 +802,10 @@ _strcpy                    text11       00387E
 _strlen                    text13       003AA0
 _strncmp                   text7        00318E
 _tolower                   text9        00381E
-_tolower$1414              cstackCOMRAM 00000D
+_tolower$1422              cstackCOMRAM 00000D
 _vfpfcnvrt                 text6        00190C
-_vfpfcnvrt$834             cstackCOMRAM 000052
-_vfpfcnvrt$838             cstackCOMRAM 000054
+_vfpfcnvrt$842             cstackCOMRAM 000052
+_vfpfcnvrt$846             cstackCOMRAM 000054
 _vfprintf                  text5        0037BC
 _width                     bssBANK0     0000BE
 atoi@n                     cstackCOMRAM 000015
@@ -905,7 +905,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 134 in file "main.c"
+		line 18 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -936,7 +936,7 @@ Total ram usage:        0 bytes
 
  *************** function _stateMachine *****************
  Defined at:
-		line 58 in file "main.c"
+		line 51 in file "statemachine.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -971,7 +971,7 @@ Total ram usage:        2 bytes
 
  *************** function _reset *****************
  Defined at:
-		line 38 in file "main.c"
+		line 31 in file "statemachine.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -996,14 +996,14 @@ Total ram usage:        0 bytes
 		_limpa_lcd
 		_printf
  This function is called by:
-		_stateMachine
 		_main
+		_stateMachine
  This function uses a non-reentrant model
 
 
  *************** function _displayPlayers *****************
  Defined at:
-		line 17 in file "main.c"
+		line 10 in file "statemachine.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1501,7 +1501,7 @@ Total ram usage:        9 bytes
 
  *************** function _putch *****************
  Defined at:
-		line 12 in file "main.c"
+		line 13 in file "main.c"
  Parameters:    Size  Location     Type
   data            1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -2202,10 +2202,10 @@ Total ram usage:        1 bytes
  This function calls:
 		_envia_byte_lcd
  This function is called by:
+		_setup
 		_displayPlayers
 		_reset
 		_stateMachine
-		_setup
  This function uses a non-reentrant model
 
 
@@ -2397,7 +2397,7 @@ Total ram usage:        0 bytes
 
  *************** function _isr *****************
  Defined at:
-		line 141 in file "main.c"
+		line 25 in file "main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -2428,6 +2428,13 @@ Total ram usage:        0 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+statemachine.c
+		_reset         		CODE           	36E8	0000	107
+		_displayPlayers		CODE           	2D36	0000	337
+		_stateMachine  		CODE           	2558	0000	649
+
+statemachine.c estimated size: 1093
+
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\floorf.c
 		_floorf        		CODE           	27E0	0000	531
 
@@ -2561,14 +2568,11 @@ C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\awmod.c estimated size: 177
 
 main.c
-		_reset         		CODE           	36E8	0000	107
 		_putch         		CODE           	3C24	0000	11
 		_main          		CODE           	3C02	0000	21
-		_displayPlayers		CODE           	2D36	0000	337
 		_isr           		CODE           	0008	0000	113
-		_stateMachine  		CODE           	2558	0000	649
 
-main.c estimated size: 1238
+main.c estimated size: 145
 
 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\sources\c99\common\isupper.c
 		_isupper       		CODE           	39F8	0000	57

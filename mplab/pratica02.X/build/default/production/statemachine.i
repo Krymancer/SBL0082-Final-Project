@@ -5621,7 +5621,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "statemachine.c" 2
 
 
-
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5760,7 +5759,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 4 "statemachine.c" 2
+# 3 "statemachine.c" 2
 
 
 # 1 "./globalscope.h" 1
@@ -5777,8 +5776,11 @@ int player2Pressed;
 float player1Time;
 float player2Time;
 
+int p1concorrency;
+int p2concorrency;
+
 int gameStatus;
-# 6 "statemachine.c" 2
+# 5 "statemachine.c" 2
 
 # 1 "./lcd.h" 1
 # 15 "./lcd.h"
@@ -5788,7 +5790,7 @@ int gameStatus;
  void limpa_lcd(void);
  void inicializa_lcd(void);
  void caracter_inicio(char linha,char coluna);
-# 7 "statemachine.c" 2
+# 6 "statemachine.c" 2
 
 # 1 "./config.h" 1
 
@@ -5853,7 +5855,7 @@ int gameStatus;
 
 
 #pragma WDTEN = OFF
-# 8 "statemachine.c" 2
+# 7 "statemachine.c" 2
 
 # 1 "./pinconfig.h" 1
 # 14 "./pinconfig.h"
@@ -5861,7 +5863,8 @@ void configurePins();
 void configureIRQ();
 void initTimer();
 void setup();
-# 9 "statemachine.c" 2
+# 8 "statemachine.c" 2
+
 
 void displayPlayers(){
     limpa_lcd();
@@ -5886,9 +5889,9 @@ void displayPlayers(){
 
 void reset(){
     gameStatus = 0;
+
     currentTime = 0;
     firstPlayer = 0;
-
     player1Time = 0;
     player2Time = 0;
 
@@ -5946,6 +5949,13 @@ void stateMachine(){
                 if(!player1Pressed){
                     player1Time = (float)currentTime/100.0;
 
+                    if(p1concorrency){
+                        player2Time = player1Time;
+                        player2Pressed = 1;
+                        PORTCbits.RC0 = 1;
+                        PORTCbits.RC1 = 1;
+                    }
+
                     if(!player2Pressed) {
                         firstPlayer = 0xd01;
                         PORTCbits.RC0 = 1;
@@ -5961,6 +5971,13 @@ void stateMachine(){
             if(gameStatus){
                 if(!player2Pressed){
                     player2Time = (float)currentTime/100.0;
+
+                    if(p2concorrency){
+                        player1Time = player2Time;
+                        player1Pressed = 1;
+                        PORTCbits.RC0 = 1;
+                        PORTCbits.RC1 = 1;
+                    }
 
                     if(!player1Pressed) {
                         firstPlayer = 0xd02;

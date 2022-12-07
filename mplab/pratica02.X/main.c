@@ -24,22 +24,32 @@ void main(void)
 void __interrupt(high_priority) isr(void)
 {
     if(INTCONbits.INT0IF){
+        if(currentState == ST_P2) {
+            p1concorrency = 1;
+        }
         currentState = ST_P1;
         INTCONbits.INT0IF = 0;
+        return;
     }
         
     if(INTCON3bits.INT1IF){
+        if(currentState == ST_P1) {
+            p2concorrency = 1;
+        }
         currentState = ST_P2;
         INTCON3bits.INT1IF = 0;
+        return;
     }
     
     if(INTCON3bits.INT2IF){
         currentState = ST_MP;
         INTCON3bits.INT2IF = 0;
+        return;
     }
     
     if(TMR2IF){
         currentTime++; // 10ms
         TMR2IF = 0;
+        return;
     }
 }

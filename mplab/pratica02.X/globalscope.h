@@ -28,6 +28,9 @@ int player2Pressed;
 float player1Time;
 float player2Time;
 
+int p1concorrency;
+int p2concorrency;
+
 int gameStatus;
 #endif	/* GLOBALSCOPE_H */
 

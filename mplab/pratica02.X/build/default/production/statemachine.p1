@@ -589,7 +589,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./globalscope.h: 29: float player2Time;
 [v _player2Time `f ~T0 @X0 1 e ]
 "31
-[; ;./globalscope.h: 31: int gameStatus;
+[; ;./globalscope.h: 31: int p1concorrency;
+[v _p1concorrency `i ~T0 @X0 1 e ]
+"32
+[; ;./globalscope.h: 32: int p2concorrency;
+[v _p2concorrency `i ~T0 @X0 1 e ]
+"34
+[; ;./globalscope.h: 34: int gameStatus;
 [v _gameStatus `i ~T0 @X0 1 e ]
 "5 ./config.h
 [p x FOSC = XT_XT ]
@@ -749,11 +755,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [; ;statemachine.c: 32:     gameStatus = 0;
 [e = _gameStatus -> 0 `i ]
-"33
-[; ;statemachine.c: 33:     currentTime = 0;
-[e = _currentTime -> 0 `i ]
 "34
-[; ;statemachine.c: 34:     firstPlayer = 0;
+[; ;statemachine.c: 34:     currentTime = 0;
+[e = _currentTime -> 0 `i ]
+"35
+[; ;statemachine.c: 35:     firstPlayer = 0;
 [e = _firstPlayer -> 0 `i ]
 "36
 [; ;statemachine.c: 36:     player1Time = 0;
@@ -927,100 +933,140 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;statemachine.c: 91:                     player1Time = (float)currentTime/100.0;
 [e = _player1Time -> / -> -> _currentTime `f `d .100.0 `f ]
 "93
-[; ;statemachine.c: 93:                     if(!player2Pressed) {
-[e $ ! ! != _player2Pressed -> 0 `i 393  ]
+[; ;statemachine.c: 93:                     if(p1concorrency){
+[e $ ! != _p1concorrency -> 0 `i 393  ]
 {
 "94
-[; ;statemachine.c: 94:                         firstPlayer = 0xd01;
-[e = _firstPlayer -> 3329 `i ]
+[; ;statemachine.c: 94:                         player2Time = player1Time;
+[e = _player2Time _player1Time ]
 "95
-[; ;statemachine.c: 95:                         PORTCbits.RC0 = 1;
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+[; ;statemachine.c: 95:                         player2Pressed = 1;
+[e = _player2Pressed -> 1 `i ]
 "96
-[; ;statemachine.c: 96:                     }
+[; ;statemachine.c: 96:                         PORTCbits.RC0 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+"97
+[; ;statemachine.c: 97:                         PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"98
+[; ;statemachine.c: 98:                     }
 }
 [e :U 393 ]
-"98
-[; ;statemachine.c: 98:                     player1Pressed = 1;
-[e = _player1Pressed -> 1 `i ]
-"99
-[; ;statemachine.c: 99:                     displayPlayers();
-[e ( _displayPlayers ..  ]
 "100
-[; ;statemachine.c: 100:                 }
+[; ;statemachine.c: 100:                     if(!player2Pressed) {
+[e $ ! ! != _player2Pressed -> 0 `i 394  ]
+{
+"101
+[; ;statemachine.c: 101:                         firstPlayer = 0xd01;
+[e = _firstPlayer -> 3329 `i ]
+"102
+[; ;statemachine.c: 102:                         PORTCbits.RC0 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+"103
+[; ;statemachine.c: 103:                     }
+}
+[e :U 394 ]
+"105
+[; ;statemachine.c: 105:                     player1Pressed = 1;
+[e = _player1Pressed -> 1 `i ]
+"106
+[; ;statemachine.c: 106:                     displayPlayers();
+[e ( _displayPlayers ..  ]
+"107
+[; ;statemachine.c: 107:                 }
 }
 [e :U 392 ]
-"101
-[; ;statemachine.c: 101:             }
+"108
+[; ;statemachine.c: 108:             }
 }
 [e :U 391 ]
-"102
-[; ;statemachine.c: 102:             break;
-[e $U 378  ]
-"103
-[; ;statemachine.c: 103:         }
-}
-"104
-[; ;statemachine.c: 104:         case 0xf06: {
-[e :U 394 ]
-{
-"105
-[; ;statemachine.c: 105:             if(gameStatus){
-[e $ ! != _gameStatus -> 0 `i 395  ]
-{
-"106
-[; ;statemachine.c: 106:                 if(!player2Pressed){
-[e $ ! ! != _player2Pressed -> 0 `i 396  ]
-{
-"107
-[; ;statemachine.c: 107:                     player2Time = (float)currentTime/100.0;
-[e = _player2Time -> / -> -> _currentTime `f `d .100.0 `f ]
 "109
-[; ;statemachine.c: 109:                     if(!player1Pressed) {
-[e $ ! ! != _player1Pressed -> 0 `i 397  ]
-{
+[; ;statemachine.c: 109:             break;
+[e $U 378  ]
 "110
-[; ;statemachine.c: 110:                         firstPlayer = 0xd02;
-[e = _firstPlayer -> 3330 `i ]
+[; ;statemachine.c: 110:         }
+}
 "111
-[; ;statemachine.c: 111:                         PORTCbits.RC1 = 1;
-[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+[; ;statemachine.c: 111:         case 0xf06: {
+[e :U 395 ]
+{
 "112
-[; ;statemachine.c: 112:                     }
+[; ;statemachine.c: 112:             if(gameStatus){
+[e $ ! != _gameStatus -> 0 `i 396  ]
+{
+"113
+[; ;statemachine.c: 113:                 if(!player2Pressed){
+[e $ ! ! != _player2Pressed -> 0 `i 397  ]
+{
+"114
+[; ;statemachine.c: 114:                     player2Time = (float)currentTime/100.0;
+[e = _player2Time -> / -> -> _currentTime `f `d .100.0 `f ]
+"116
+[; ;statemachine.c: 116:                     if(p2concorrency){
+[e $ ! != _p2concorrency -> 0 `i 398  ]
+{
+"117
+[; ;statemachine.c: 117:                         player1Time = player2Time;
+[e = _player1Time _player2Time ]
+"118
+[; ;statemachine.c: 118:                         player1Pressed = 1;
+[e = _player1Pressed -> 1 `i ]
+"119
+[; ;statemachine.c: 119:                         PORTCbits.RC0 = 1;
+[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
+"120
+[; ;statemachine.c: 120:                         PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"121
+[; ;statemachine.c: 121:                     }
+}
+[e :U 398 ]
+"123
+[; ;statemachine.c: 123:                     if(!player1Pressed) {
+[e $ ! ! != _player1Pressed -> 0 `i 399  ]
+{
+"124
+[; ;statemachine.c: 124:                         firstPlayer = 0xd02;
+[e = _firstPlayer -> 3330 `i ]
+"125
+[; ;statemachine.c: 125:                         PORTCbits.RC1 = 1;
+[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
+"126
+[; ;statemachine.c: 126:                     }
+}
+[e :U 399 ]
+"128
+[; ;statemachine.c: 128:                     player2Pressed = 1;
+[e = _player2Pressed -> 1 `i ]
+"129
+[; ;statemachine.c: 129:                     displayPlayers();
+[e ( _displayPlayers ..  ]
+"130
+[; ;statemachine.c: 130:                 }
 }
 [e :U 397 ]
-"114
-[; ;statemachine.c: 114:                     player2Pressed = 1;
-[e = _player2Pressed -> 1 `i ]
-"115
-[; ;statemachine.c: 115:                     displayPlayers();
-[e ( _displayPlayers ..  ]
-"116
-[; ;statemachine.c: 116:                 }
+"131
+[; ;statemachine.c: 131:             }
 }
 [e :U 396 ]
-"117
-[; ;statemachine.c: 117:             }
-}
-[e :U 395 ]
-"118
-[; ;statemachine.c: 118:             break;
+"132
+[; ;statemachine.c: 132:             break;
 [e $U 378  ]
-"119
-[; ;statemachine.c: 119:         }
+"133
+[; ;statemachine.c: 133:         }
 }
-"120
-[; ;statemachine.c: 120:         default: {
-[e :U 398 ]
+"134
+[; ;statemachine.c: 134:         default: {
+[e :U 400 ]
 {
-"121
-[; ;statemachine.c: 121:             break;
+"135
+[; ;statemachine.c: 135:             break;
 [e $U 378  ]
-"122
-[; ;statemachine.c: 122:         }
+"136
+[; ;statemachine.c: 136:         }
 }
-"123
-[; ;statemachine.c: 123:     }
+"137
+[; ;statemachine.c: 137:     }
 }
 [e $U 378  ]
 [e :U 379 ]
@@ -1030,11 +1076,11 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3844 `i 384
  , $ -> 3847 `i 385
  , $ -> 3845 `i 390
- , $ -> 3846 `i 394
- 398 ]
+ , $ -> 3846 `i 395
+ 400 ]
 [e :U 378 ]
-"124
-[; ;statemachine.c: 124: }
+"138
+[; ;statemachine.c: 138: }
 [e :UE 377 ]
 }
 [p f _printf 8462336 ]

@@ -5621,7 +5621,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 # 1 "main.c" 2
 
 
-
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 1 3
 # 24 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -5760,7 +5759,7 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 4 "main.c" 2
+# 3 "main.c" 2
 
 
 # 1 "./config.h" 1
@@ -5826,7 +5825,7 @@ char *tempnam(const char *, const char *);
 
 
 #pragma WDTEN = OFF
-# 6 "main.c" 2
+# 5 "main.c" 2
 
 # 1 "./globalscope.h" 1
 # 19 "./globalscope.h"
@@ -5842,8 +5841,11 @@ int player2Pressed;
 float player1Time;
 float player2Time;
 
+int p1concorrency;
+int p2concorrency;
+
 int gameStatus;
-# 7 "main.c" 2
+# 6 "main.c" 2
 
 # 1 "./lcd.h" 1
 # 15 "./lcd.h"
@@ -5853,7 +5855,7 @@ int gameStatus;
  void limpa_lcd(void);
  void inicializa_lcd(void);
  void caracter_inicio(char linha,char coluna);
-# 8 "main.c" 2
+# 7 "main.c" 2
 
 # 1 "./pinconfig.h" 1
 # 14 "./pinconfig.h"
@@ -5861,7 +5863,7 @@ void configurePins();
 void configureIRQ();
 void initTimer();
 void setup();
-# 9 "main.c" 2
+# 8 "main.c" 2
 
 # 1 "./statemachine.h" 1
 
@@ -5870,7 +5872,7 @@ void setup();
 void displayPlayers();
 void reset();
 void stateMachine();
-# 10 "main.c" 2
+# 9 "main.c" 2
 
 
 
@@ -5889,22 +5891,32 @@ void main(void)
 void __attribute__((picinterrupt(("high_priority")))) isr(void)
 {
     if(INTCONbits.INT0IF){
+        if(currentState == 0xf06) {
+            p1concorrency = 1;
+        }
         currentState = 0xf05;
         INTCONbits.INT0IF = 0;
+        return;
     }
 
     if(INTCON3bits.INT1IF){
+        if(currentState == 0xf05) {
+            p2concorrency = 1;
+        }
         currentState = 0xf06;
         INTCON3bits.INT1IF = 0;
+        return;
     }
 
     if(INTCON3bits.INT2IF){
         currentState = 0xf07;
         INTCON3bits.INT2IF = 0;
+        return;
     }
 
     if(TMR2IF){
         currentTime++;
         TMR2IF = 0;
+        return;
     }
 }

@@ -1,8 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F3492 `(v ~T0 @X0 1 tf1`uc ]
+[v F3494 `(v ~T0 @X0 1 tf1`uc ]
 "17 ./lcd.h
 [; ;./lcd.h: 17:  __attribute__((inline)) void escreve_lcd(char c);
-[v _escreve_lcd `TF3492 ~T0 @X0 0 e ]
+[v _escreve_lcd `TF3494 ~T0 @X0 0 e ]
 [p mainexit ]
 "17 ./pinconfig.h
 [; ;./pinconfig.h: 17: void setup();
@@ -654,120 +654,160 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./globalscope.h: 29: float player2Time;
 [v _player2Time `f ~T0 @X0 1 e ]
 "31
-[; ;./globalscope.h: 31: int gameStatus;
+[; ;./globalscope.h: 31: int p1concorrency;
+[v _p1concorrency `i ~T0 @X0 1 e ]
+"32
+[; ;./globalscope.h: 32: int p2concorrency;
+[v _p2concorrency `i ~T0 @X0 1 e ]
+"34
+[; ;./globalscope.h: 34: int gameStatus;
 [v _gameStatus `i ~T0 @X0 1 e ]
-"13 main.c
-[; ;main.c: 13: void putch(char data)
+"12 main.c
+[; ;main.c: 12: void putch(char data)
 [v _putch `(v ~T0 @X0 1 ef1`uc ]
-"14
-[; ;main.c: 14: {
+"13
+[; ;main.c: 13: {
 {
 [e :U _putch ]
-"13
-[; ;main.c: 13: void putch(char data)
+"12
+[; ;main.c: 12: void putch(char data)
 [v _data `uc ~T0 @X0 1 r1 ]
-"14
-[; ;main.c: 14: {
+"13
+[; ;main.c: 13: {
 [f ]
-"15
-[; ;main.c: 15:     escreve_lcd(data);
+"14
+[; ;main.c: 14:     escreve_lcd(data);
 [e ( _escreve_lcd (1 _data ]
-"16
-[; ;main.c: 16: }
+"15
+[; ;main.c: 15: }
 [e :UE 369 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"18
-[; ;main.c: 18: void main(void)
+"17
+[; ;main.c: 17: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"19
-[; ;main.c: 19: {
+"18
+[; ;main.c: 18: {
 {
 [e :U _main ]
 [f ]
-"20
-[; ;main.c: 20:     setup();
+"19
+[; ;main.c: 19:     setup();
 [e ( _setup ..  ]
-"21
-[; ;main.c: 21:     reset();
+"20
+[; ;main.c: 20:     reset();
 [e ( _reset ..  ]
-"22
-[; ;main.c: 22:     while (1) stateMachine();
+"21
+[; ;main.c: 21:     while (1) stateMachine();
 [e :U 372 ]
 [e ( _stateMachine ..  ]
 [e :U 371 ]
 [e $U 372  ]
 [e :U 373 ]
-"23
-[; ;main.c: 23: }
+"22
+[; ;main.c: 22: }
 [e :UE 370 ]
 }
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"25
-[; ;main.c: 25: void __attribute__((picinterrupt(("high_priority")))) isr(void)
+"24
+[; ;main.c: 24: void __attribute__((picinterrupt(("high_priority")))) isr(void)
 [v _isr `(v ~T36 @X0 1 ef ]
-"26
-[; ;main.c: 26: {
+"25
+[; ;main.c: 25: {
 {
 [e :U _isr ]
 [f ]
-"27
-[; ;main.c: 27:     if(INTCONbits.INT0IF){
+"26
+[; ;main.c: 26:     if(INTCONbits.INT0IF){
 [e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 375  ]
 {
-"28
-[; ;main.c: 28:         currentState = 0xf05;
-[e = _currentState -> 3845 `i ]
-"29
-[; ;main.c: 29:         INTCONbits.INT0IF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"30
-[; ;main.c: 30:     }
-}
-[e :U 375 ]
-"32
-[; ;main.c: 32:     if(INTCON3bits.INT1IF){
-[e $ ! != -> . . _INTCON3bits 0 0 `i -> 0 `i 376  ]
+"27
+[; ;main.c: 27:         if(currentState == 0xf06) {
+[e $ ! == _currentState -> 3846 `i 376  ]
 {
-"33
-[; ;main.c: 33:         currentState = 0xf06;
-[e = _currentState -> 3846 `i ]
-"34
-[; ;main.c: 34:         INTCON3bits.INT1IF = 0;
-[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
-"35
-[; ;main.c: 35:     }
+"28
+[; ;main.c: 28:             p1concorrency = 1;
+[e = _p1concorrency -> 1 `i ]
+"29
+[; ;main.c: 29:         }
 }
 [e :U 376 ]
-"37
-[; ;main.c: 37:     if(INTCON3bits.INT2IF){
-[e $ ! != -> . . _INTCON3bits 0 1 `i -> 0 `i 377  ]
-{
-"38
-[; ;main.c: 38:         currentState = 0xf07;
-[e = _currentState -> 3847 `i ]
-"39
-[; ;main.c: 39:         INTCON3bits.INT2IF = 0;
-[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
-"40
-[; ;main.c: 40:     }
+"30
+[; ;main.c: 30:         currentState = 0xf05;
+[e = _currentState -> 3845 `i ]
+"31
+[; ;main.c: 31:         INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+"32
+[; ;main.c: 32:         return;
+[e $UE 374  ]
+"33
+[; ;main.c: 33:     }
 }
-[e :U 377 ]
-"42
-[; ;main.c: 42:     if(TMR2IF){
-[e $ ! _TMR2IF 378  ]
+[e :U 375 ]
+"35
+[; ;main.c: 35:     if(INTCON3bits.INT1IF){
+[e $ ! != -> . . _INTCON3bits 0 0 `i -> 0 `i 377  ]
 {
-"43
-[; ;main.c: 43:         currentTime++;
-[e ++ _currentTime -> 1 `i ]
-"44
-[; ;main.c: 44:         TMR2IF = 0;
-[e = _TMR2IF -> -> 0 `i `b ]
-"45
-[; ;main.c: 45:     }
+"36
+[; ;main.c: 36:         if(currentState == 0xf05) {
+[e $ ! == _currentState -> 3845 `i 378  ]
+{
+"37
+[; ;main.c: 37:             p2concorrency = 1;
+[e = _p2concorrency -> 1 `i ]
+"38
+[; ;main.c: 38:         }
 }
 [e :U 378 ]
+"39
+[; ;main.c: 39:         currentState = 0xf06;
+[e = _currentState -> 3846 `i ]
+"40
+[; ;main.c: 40:         INTCON3bits.INT1IF = 0;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+"41
+[; ;main.c: 41:         return;
+[e $UE 374  ]
+"42
+[; ;main.c: 42:     }
+}
+[e :U 377 ]
+"44
+[; ;main.c: 44:     if(INTCON3bits.INT2IF){
+[e $ ! != -> . . _INTCON3bits 0 1 `i -> 0 `i 379  ]
+{
+"45
+[; ;main.c: 45:         currentState = 0xf07;
+[e = _currentState -> 3847 `i ]
 "46
-[; ;main.c: 46: }
+[; ;main.c: 46:         INTCON3bits.INT2IF = 0;
+[e = . . _INTCON3bits 0 1 -> -> 0 `i `uc ]
+"47
+[; ;main.c: 47:         return;
+[e $UE 374  ]
+"48
+[; ;main.c: 48:     }
+}
+[e :U 379 ]
+"50
+[; ;main.c: 50:     if(TMR2IF){
+[e $ ! _TMR2IF 380  ]
+{
+"51
+[; ;main.c: 51:         currentTime++;
+[e ++ _currentTime -> 1 `i ]
+"52
+[; ;main.c: 52:         TMR2IF = 0;
+[e = _TMR2IF -> -> 0 `i `b ]
+"53
+[; ;main.c: 53:         return;
+[e $UE 374  ]
+"54
+[; ;main.c: 54:     }
+}
+[e :U 380 ]
+"55
+[; ;main.c: 55: }
 [e :UE 374 ]
 }

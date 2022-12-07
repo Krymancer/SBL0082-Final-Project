@@ -89,13 +89,20 @@ void stateMachine(){
             if(gameStatus){
                 if(!player1Pressed){
                     player1Time = (float)currentTime/100.0;
+                    
+                    if(p1concorrency){
+                        player2Time = player1Time;
+                        player2Pressed = true;
+                        LED1 = 1;
+                        LED2 = 1;
+                    }
 
                     if(!player2Pressed) {
                         firstPlayer = PLAYER1;
                         LED1 = 1;
                     }
-
-                    player1Pressed = 1;
+                    
+                    player1Pressed = true;
                     displayPlayers();
                 }
             }
@@ -105,13 +112,20 @@ void stateMachine(){
             if(gameStatus){
                 if(!player2Pressed){
                     player2Time = (float)currentTime/100.0;
+                    
+                    if(p2concorrency){
+                        player1Time = player2Time;
+                        player1Pressed = true;
+                        LED1 = 1;
+                        LED2 = 1;
+                    }
 
                     if(!player1Pressed) {
                         firstPlayer = PLAYER2;
                         LED2 = 1;
                     }
 
-                    player2Pressed = 1;
+                    player2Pressed = true;
                     displayPlayers();
                 }
             }
